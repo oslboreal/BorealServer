@@ -1,0 +1,9 @@
+C:\Users\mvallejo\source\repos\BorealClientServer\CoreClient\bin\Debug\netstandard2.0\CoreClient.deps.json
+C:\Users\mvallejo\source\repos\BorealClientServer\CoreClient\bin\Debug\netstandard2.0\CoreClient.dll
+C:\Users\mvallejo\source\repos\BorealClientServer\CoreClient\bin\Debug\netstandard2.0\CoreClient.pdb
+C:\Users\mvallejo\source\repos\BorealClientServer\CoreClient\obj\Debug\netstandard2.0\CoreClient.csproj.CoreCompileInputs.cache
+C:\Users\mvallejo\source\repos\BorealClientServer\CoreClient\obj\Debug\netstandard2.0\CoreClient.AssemblyInfoInputs.cache
+C:\Users\mvallejo\source\repos\BorealClientServer\CoreClient\obj\Debug\netstandard2.0\CoreClient.AssemblyInfo.cs
+C:\Users\mvallejo\source\repos\BorealClientServer\CoreClient\obj\Debug\netstandard2.0\CoreClient.dll
+C:\Users\mvallejo\source\repos\BorealClientServer\CoreClient\obj\Debug\netstandard2.0\CoreClient.pdb
+C:\Users\mvallejo\source\repos\BorealClientServer\CoreClient\obj\Debug\netstandard2.0\CoreClient.csprojAssemblyReference.cache
