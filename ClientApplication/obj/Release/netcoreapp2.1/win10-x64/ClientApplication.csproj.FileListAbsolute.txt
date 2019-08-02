@@ -1,0 +1,14 @@
+C:\Users\mvallejo\source\repos\BorealClientServer\ClientApplication\bin\Release\netcoreapp2.1\win10-x64\hostpolicy.dll
+C:\Users\mvallejo\source\repos\BorealClientServer\ClientApplication\bin\Release\netcoreapp2.1\win10-x64\hostfxr.dll
+C:\Users\mvallejo\source\repos\BorealClientServer\ClientApplication\bin\Release\netcoreapp2.1\win10-x64\ClientApplication.exe
+C:\Users\mvallejo\source\repos\BorealClientServer\ClientApplication\bin\Release\netcoreapp2.1\win10-x64\ClientApplication.deps.json
+C:\Users\mvallejo\source\repos\BorealClientServer\ClientApplication\bin\Release\netcoreapp2.1\win10-x64\ClientApplication.runtimeconfig.json
+C:\Users\mvallejo\source\repos\BorealClientServer\ClientApplication\bin\Release\netcoreapp2.1\win10-x64\ClientApplication.runtimeconfig.dev.json
+C:\Users\mvallejo\source\repos\BorealClientServer\ClientApplication\bin\Release\netcoreapp2.1\win10-x64\ClientApplication.dll
+C:\Users\mvallejo\source\repos\BorealClientServer\ClientApplication\bin\Release\netcoreapp2.1\win10-x64\ClientApplication.pdb
+C:\Users\mvallejo\source\repos\BorealClientServer\ClientApplication\obj\Release\netcoreapp2.1\win10-x64\ClientApplication.csprojAssemblyReference.cache
+C:\Users\mvallejo\source\repos\BorealClientServer\ClientApplication\obj\Release\netcoreapp2.1\win10-x64\ClientApplication.csproj.CoreCompileInputs.cache
+C:\Users\mvallejo\source\repos\BorealClientServer\ClientApplication\obj\Release\netcoreapp2.1\win10-x64\ClientApplication.AssemblyInfoInputs.cache
+C:\Users\mvallejo\source\repos\BorealClientServer\ClientApplication\obj\Release\netcoreapp2.1\win10-x64\ClientApplication.AssemblyInfo.cs
+C:\Users\mvallejo\source\repos\BorealClientServer\ClientApplication\obj\Release\netcoreapp2.1\win10-x64\ClientApplication.dll
+C:\Users\mvallejo\source\repos\BorealClientServer\ClientApplication\obj\Release\netcoreapp2.1\win10-x64\ClientApplication.pdb

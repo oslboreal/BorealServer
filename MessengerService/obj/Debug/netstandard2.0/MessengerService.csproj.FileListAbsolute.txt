@@ -1,0 +1,9 @@
+C:\Users\mvallejo\source\repos\BorealClientServer\MessengerService\bin\Debug\netstandard2.0\MessengerService.deps.json
+C:\Users\mvallejo\source\repos\BorealClientServer\MessengerService\bin\Debug\netstandard2.0\MessengerService.dll
+C:\Users\mvallejo\source\repos\BorealClientServer\MessengerService\bin\Debug\netstandard2.0\MessengerService.pdb
+C:\Users\mvallejo\source\repos\BorealClientServer\MessengerService\obj\Debug\netstandard2.0\MessengerService.csproj.CoreCompileInputs.cache
+C:\Users\mvallejo\source\repos\BorealClientServer\MessengerService\obj\Debug\netstandard2.0\MessengerService.AssemblyInfoInputs.cache
+C:\Users\mvallejo\source\repos\BorealClientServer\MessengerService\obj\Debug\netstandard2.0\MessengerService.AssemblyInfo.cs
+C:\Users\mvallejo\source\repos\BorealClientServer\MessengerService\obj\Debug\netstandard2.0\MessengerService.dll
+C:\Users\mvallejo\source\repos\BorealClientServer\MessengerService\obj\Debug\netstandard2.0\MessengerService.pdb
+C:\Users\mvallejo\source\repos\BorealClientServer\MessengerService\obj\Debug\netstandard2.0\MessengerService.csprojAssemblyReference.cache

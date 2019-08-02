@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MessengerService.Requests;
+using System;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -13,7 +14,14 @@ namespace CoreClient
             IPAddress ipAddress = ipHostInfo.AddressList[0];
             IPEndPoint remoteEP = new IPEndPoint(ipAddress, 11000);
 
-            Send("HOla", remoteEP);
+            TestRequest testRequest = new TestRequest()
+            {
+                Message = "Mensaje prueba",
+                RequestNumber = 1
+            };
+
+            Console.WriteLine(testRequest.Serialize());
+            Send(testRequest.Serialize(), remoteEP);
             Console.ReadLine();
         }
 

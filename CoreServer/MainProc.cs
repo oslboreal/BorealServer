@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CoreServer.Helpers;
+using MessengerService.Requests;
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
@@ -18,6 +20,25 @@ namespace CoreServer
         // Thread signal.  
         private static ManualResetEvent allDone = new ManualResetEvent(false);
 
+        // TODO : Get this out of here, use delegates to allow custom processes.
+        public static void ProcessReceivedRequest(Socket handler, string request)
+        {
+            // Expected processes.
+
+            var testRequest = TestRequest.Deserialize(request);
+            if (testRequest != null)
+                ProcessTestRequest(testRequest);
+
+
+            Send(handler, "Received");
+        }
+
+        public static void ProcessTestRequest(TestRequest testRequest)
+        {
+            var output = $"Number: {testRequest.RequestNumber} - Message: {testRequest.Message}";
+            LoggingService.Log(output);
+        }
+
         public void Start()
         {
             Task.Factory.StartNew(() =>
@@ -26,6 +47,7 @@ namespace CoreServer
                 IPAddress ipAddress = ipHostInfo.AddressList[0];
                 IPEndPoint localEndPoint = new IPEndPoint(ipAddress, 11000);
 
+                // TODO : Validate case, message have not eof tag.
                 StartListening(localEndPoint);
             });
         }
@@ -44,16 +66,16 @@ namespace CoreServer
 
                 while (true)
                 {
-                    // Set the event to nonsignaled state.  
+                    // Set the event to nonsignaled state.
                     allDone.Reset();
 
-                    // Start an asynchronous socket to listen for connections.  
+                    // Start an asynchronous socket to listen for connections.
                     //Console.WriteLine("Waiting for a connection...");
                     listener.BeginAccept(
                         new AsyncCallback(AcceptCallback),
                         listener);
 
-                    // Wait until a connection is made before continuing.  
+                    // Wait until a connection is made before continuing.
                     allDone.WaitOne();
                 }
 
@@ -108,7 +130,7 @@ namespace CoreServer
                     //Console.WriteLine("Read {0} bytes from socket. \n Data : {1}",
                     //content.Length, content);
                     // Echo the data back to the client. 
-                    Send(handler, "Received");
+                    ProcessReceivedRequest(handler, content);
                 }
                 else
                 {

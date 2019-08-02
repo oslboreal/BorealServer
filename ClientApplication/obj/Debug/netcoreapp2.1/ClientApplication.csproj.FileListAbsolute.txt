@@ -1,0 +1,16 @@
+C:\Users\mvallejo\source\repos\BorealClientServer\ClientApplication\bin\Debug\netcoreapp2.1\ClientApplication.deps.json
+C:\Users\mvallejo\source\repos\BorealClientServer\ClientApplication\bin\Debug\netcoreapp2.1\ClientApplication.runtimeconfig.json
+C:\Users\mvallejo\source\repos\BorealClientServer\ClientApplication\bin\Debug\netcoreapp2.1\ClientApplication.runtimeconfig.dev.json
+C:\Users\mvallejo\source\repos\BorealClientServer\ClientApplication\bin\Debug\netcoreapp2.1\ClientApplication.dll
+C:\Users\mvallejo\source\repos\BorealClientServer\ClientApplication\bin\Debug\netcoreapp2.1\ClientApplication.pdb
+C:\Users\mvallejo\source\repos\BorealClientServer\ClientApplication\obj\Debug\netcoreapp2.1\ClientApplication.csprojAssemblyReference.cache
+C:\Users\mvallejo\source\repos\BorealClientServer\ClientApplication\obj\Debug\netcoreapp2.1\ClientApplication.csproj.CoreCompileInputs.cache
+C:\Users\mvallejo\source\repos\BorealClientServer\ClientApplication\obj\Debug\netcoreapp2.1\ClientApplication.AssemblyInfoInputs.cache
+C:\Users\mvallejo\source\repos\BorealClientServer\ClientApplication\obj\Debug\netcoreapp2.1\ClientApplication.AssemblyInfo.cs
+C:\Users\mvallejo\source\repos\BorealClientServer\ClientApplication\obj\Debug\netcoreapp2.1\ClientApplication.dll
+C:\Users\mvallejo\source\repos\BorealClientServer\ClientApplication\obj\Debug\netcoreapp2.1\ClientApplication.pdb
+C:\Users\mvallejo\source\repos\BorealClientServer\ClientApplication\bin\Debug\netcoreapp2.1\CoreClient.dll
+C:\Users\mvallejo\source\repos\BorealClientServer\ClientApplication\bin\Debug\netcoreapp2.1\MessengerService.dll
+C:\Users\mvallejo\source\repos\BorealClientServer\ClientApplication\bin\Debug\netcoreapp2.1\CoreClient.pdb
+C:\Users\mvallejo\source\repos\BorealClientServer\ClientApplication\bin\Debug\netcoreapp2.1\MessengerService.pdb
+C:\Users\mvallejo\source\repos\BorealClientServer\ClientApplication\obj\Debug\netcoreapp2.1\ClientApplication.csproj.CopyComplete

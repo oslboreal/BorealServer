@@ -1,8 +1,12 @@
 C:\Users\mvallejo\source\repos\BorealClientServer\CoreServer\bin\Debug\netstandard2.0\CoreServer.deps.json
 C:\Users\mvallejo\source\repos\BorealClientServer\CoreServer\bin\Debug\netstandard2.0\CoreServer.dll
 C:\Users\mvallejo\source\repos\BorealClientServer\CoreServer\bin\Debug\netstandard2.0\CoreServer.pdb
+C:\Users\mvallejo\source\repos\BorealClientServer\CoreServer\bin\Debug\netstandard2.0\MessengerService.dll
+C:\Users\mvallejo\source\repos\BorealClientServer\CoreServer\bin\Debug\netstandard2.0\MessengerService.pdb
+C:\Users\mvallejo\source\repos\BorealClientServer\CoreServer\obj\Debug\netstandard2.0\CoreServer.csprojAssemblyReference.cache
 C:\Users\mvallejo\source\repos\BorealClientServer\CoreServer\obj\Debug\netstandard2.0\CoreServer.csproj.CoreCompileInputs.cache
 C:\Users\mvallejo\source\repos\BorealClientServer\CoreServer\obj\Debug\netstandard2.0\CoreServer.AssemblyInfoInputs.cache
 C:\Users\mvallejo\source\repos\BorealClientServer\CoreServer\obj\Debug\netstandard2.0\CoreServer.AssemblyInfo.cs
+C:\Users\mvallejo\source\repos\BorealClientServer\CoreServer\obj\Debug\netstandard2.0\CoreServer.csproj.CopyComplete
 C:\Users\mvallejo\source\repos\BorealClientServer\CoreServer\obj\Debug\netstandard2.0\CoreServer.dll
 C:\Users\mvallejo\source\repos\BorealClientServer\CoreServer\obj\Debug\netstandard2.0\CoreServer.pdb
