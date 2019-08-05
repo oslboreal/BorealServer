@@ -29,14 +29,20 @@ namespace CoreServer
             if (testRequest != null)
                 ProcessTestRequest(testRequest);
 
-
             Send(handler, "Received");
         }
 
         public static void ProcessTestRequest(TestRequest testRequest)
         {
-            var output = $"Number: {testRequest.RequestNumber} - Message: {testRequest.Message}";
-            LoggingService.Log(output);
+            try
+            {
+                var output = $"Number: {testRequest.RequestNumber} - Message: {testRequest.Message}";
+                LoggingService.Log(output, LogType.Succes);
+            }
+            catch (Exception ex)
+            {
+                LoggingService.Log(ex.Message, LogType.Error);
+            }
         }
 
         public void Start()
