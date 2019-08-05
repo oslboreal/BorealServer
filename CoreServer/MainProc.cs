@@ -1,7 +1,6 @@
 ﻿using CoreServer.Helpers;
 using MessengerService.Requests;
 using System;
-using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -23,13 +22,24 @@ namespace CoreServer
         // TODO : Get this out of here, use delegates to allow custom processes.
         public static void ProcessReceivedRequest(Socket handler, string request)
         {
-            var msg = request.Replace("<EOF>", string.Empty);
+            try
+            {
+                var msg = request.Replace("<EOF>", string.Empty);
 
-            var testRequest = TestRequest.Deserialize(msg);
-            if (testRequest != null)
-                ProcessTestRequest(testRequest);
+                var testRequest = TestRequest.Deserialize(msg);
+                if (testRequest != null)
+                    ProcessTestRequest(testRequest);
 
-            Send(handler, "Received");
+                Send(handler, "Received");
+            }
+            catch (Exception ex)
+            {
+                LoggingService.Log(ex.Message, LogType.Error);
+            }
+            finally
+            {
+                //LoggingService.Log($"Request received from: {handler}", LogType.Succes);
+            }
         }
 
         public static void ProcessTestRequest(TestRequest testRequest)
@@ -53,7 +63,6 @@ namespace CoreServer
                 IPAddress ipAddress = ipHostInfo.AddressList[0];
                 IPEndPoint localEndPoint = new IPEndPoint(ipAddress, 11000);
 
-                // TODO : Validate case, message have not eof tag.
                 StartListening(localEndPoint);
             });
         }
@@ -129,6 +138,10 @@ namespace CoreServer
                 // Check for end-of-file tag. If it is not there, read   
                 // more data.  
                 content = state.sb.ToString();
+
+                if (!content.Contains("<EOF>"))
+                    content += "<EOF>";
+
                 if (content.IndexOf("<EOF>") > -1)
                 {
                     // All the data has been read from the   
