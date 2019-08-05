@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mvallejo\\source\\repos\\BorealClientServer\\CoreServer\\CoreServer.csproj": {}
+    "C:\\Users\\mvallejo\\Desktop\\Client ser repo\\BorealClientServer\\CoreServer\\CoreServer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mvallejo\\source\\repos\\BorealClientServer\\CoreServer\\CoreServer.csproj": {
+    "C:\\Users\\mvallejo\\Desktop\\Client ser repo\\BorealClientServer\\CoreServer\\CoreServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mvallejo\\source\\repos\\BorealClientServer\\CoreServer\\CoreServer.csproj",
+        "projectUniqueName": "C:\\Users\\mvallejo\\Desktop\\Client ser repo\\BorealClientServer\\CoreServer\\CoreServer.csproj",
         "projectName": "CoreServer",
-        "projectPath": "C:\\Users\\mvallejo\\source\\repos\\BorealClientServer\\CoreServer\\CoreServer.csproj",
+        "projectPath": "C:\\Users\\mvallejo\\Desktop\\Client ser repo\\BorealClientServer\\CoreServer\\CoreServer.csproj",
         "packagesPath": "C:\\Users\\mvallejo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mvallejo\\source\\repos\\BorealClientServer\\CoreServer\\obj\\",
+        "outputPath": "C:\\Users\\mvallejo\\Desktop\\Client ser repo\\BorealClientServer\\CoreServer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -32,8 +32,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "C:\\Users\\mvallejo\\source\\repos\\BorealClientServer\\MessengerService\\MessengerService.csproj": {
-                "projectPath": "C:\\Users\\mvallejo\\source\\repos\\BorealClientServer\\MessengerService\\MessengerService.csproj"
+              "C:\\Users\\mvallejo\\Desktop\\Client ser repo\\BorealClientServer\\MessengerService\\MessengerService.csproj": {
+                "projectPath": "C:\\Users\\mvallejo\\Desktop\\Client ser repo\\BorealClientServer\\MessengerService\\MessengerService.csproj"
               }
             }
           }
@@ -66,14 +66,14 @@
         }
       }
     },
-    "C:\\Users\\mvallejo\\source\\repos\\BorealClientServer\\MessengerService\\MessengerService.csproj": {
+    "C:\\Users\\mvallejo\\Desktop\\Client ser repo\\BorealClientServer\\MessengerService\\MessengerService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mvallejo\\source\\repos\\BorealClientServer\\MessengerService\\MessengerService.csproj",
+        "projectUniqueName": "C:\\Users\\mvallejo\\Desktop\\Client ser repo\\BorealClientServer\\MessengerService\\MessengerService.csproj",
         "projectName": "MessengerService",
-        "projectPath": "C:\\Users\\mvallejo\\source\\repos\\BorealClientServer\\MessengerService\\MessengerService.csproj",
+        "projectPath": "C:\\Users\\mvallejo\\Desktop\\Client ser repo\\BorealClientServer\\MessengerService\\MessengerService.csproj",
         "packagesPath": "C:\\Users\\mvallejo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mvallejo\\source\\repos\\BorealClientServer\\MessengerService\\obj\\",
+        "outputPath": "C:\\Users\\mvallejo\\Desktop\\Client ser repo\\BorealClientServer\\MessengerService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

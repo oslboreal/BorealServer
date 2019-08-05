@@ -23,9 +23,9 @@ namespace CoreServer
         // TODO : Get this out of here, use delegates to allow custom processes.
         public static void ProcessReceivedRequest(Socket handler, string request)
         {
-            // Expected processes.
+            var msg = request.Replace("<EOF>", string.Empty);
 
-            var testRequest = TestRequest.Deserialize(request);
+            var testRequest = TestRequest.Deserialize(msg);
             if (testRequest != null)
                 ProcessTestRequest(testRequest);
 
