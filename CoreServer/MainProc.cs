@@ -1,4 +1,4 @@
-﻿using CoreServer.Helpers;
+﻿using CoreServer.Components;
 using MessengerService.Requests;
 using MessengerService.Responses;
 using System;
@@ -20,7 +20,7 @@ namespace CoreServer
         // Thread signal.  
         private static ManualResetEvent allDone = new ManualResetEvent(false);
 
-        // TODO : Get this out of here, use delegates to allow custom processes.
+        // TODO : Get this out of here, use delegates to allow custom processes ??.
         public static void ProcessReceivedRequest(Socket handler, string request)
         {
             try
@@ -36,11 +36,11 @@ namespace CoreServer
             }
             catch (Exception ex)
             {
-                LoggingService.Log(ex.Message, LogType.Error);
+                LoggingComponent.Log(ex.Message, LogType.Error);
             }
             finally
             {
-                //LoggingService.Log($"Request received from: {handler}", LogType.Succes);
+                LoggingComponent.Log($"Request received from: {handler}", LogType.Succes);
             }
         }
 
@@ -53,7 +53,7 @@ namespace CoreServer
             {
                 response.ResponseStatus = ResponseStatus.Ok;
                 response.Version = "v1.0.0";
-                LoggingService.Log(response.Serialize(), LogType.Succes);
+                LoggingComponent.Log(response.Serialize(), LogType.Succes);
                 return response;
             }
             catch (Exception ex)
@@ -61,7 +61,7 @@ namespace CoreServer
                 response.ResponseStatus = ResponseStatus.Error;
                 response.Novelty = "Error processing the request.";
 
-                LoggingService.Log(ex.Message, LogType.Error);
+                LoggingComponent.Log(ex.Message, LogType.Error);
                 return response;
             }
         }
@@ -70,6 +70,8 @@ namespace CoreServer
         {
             Task.Factory.StartNew(() =>
             {
+                LoggingComponent.Log("Process started", LogType.Succes);
+
                 IPHostEntry ipHostInfo = Dns.GetHostEntry(Dns.GetHostName());
                 IPAddress ipAddress = ipHostInfo.AddressList[0];
                 IPEndPoint localEndPoint = new IPEndPoint(ipAddress, 11000);

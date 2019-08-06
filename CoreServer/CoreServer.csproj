@@ -2,6 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>BorealCoreServer</PackageId>
+    <Authors>Juan Marcos Vallejo</Authors>
+    <Product>BorealServer</Product>
+    <Description>A simple async and full socket server.</Description>
+    <Copyright />
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/oslboreal/BorealServer</RepositoryUrl>
+    <RepositoryType>GIT</RepositoryType>
+    <PackageTags>Server, socket, async</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
@@ -10,6 +20,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MessengerService\MessengerService.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Components\SecurityComponents\Models\" />
   </ItemGroup>
 
 </Project>

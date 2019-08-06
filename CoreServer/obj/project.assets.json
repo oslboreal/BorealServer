@@ -246,7 +246,7 @@
     "version": "1.0.0",
     "restore": {
       "projectUniqueName": "C:\\Users\\mvallejo\\Desktop\\Client ser repo\\BorealClientServer\\CoreServer\\CoreServer.csproj",
-      "projectName": "CoreServer",
+      "projectName": "BorealCoreServer",
       "projectPath": "C:\\Users\\mvallejo\\Desktop\\Client ser repo\\BorealClientServer\\CoreServer\\CoreServer.csproj",
       "packagesPath": "C:\\Users\\mvallejo\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\mvallejo\\Desktop\\Client ser repo\\BorealClientServer\\CoreServer\\obj\\",
