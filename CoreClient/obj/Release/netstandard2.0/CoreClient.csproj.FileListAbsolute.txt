@@ -10,3 +10,15 @@ C:\Users\mvallejo\source\repos\BorealClientServer\CoreClient\obj\Release\netstan
 C:\Users\mvallejo\source\repos\BorealClientServer\CoreClient\obj\Release\netstandard2.0\CoreClient.csproj.CopyComplete
 C:\Users\mvallejo\source\repos\BorealClientServer\CoreClient\obj\Release\netstandard2.0\CoreClient.dll
 C:\Users\mvallejo\source\repos\BorealClientServer\CoreClient\obj\Release\netstandard2.0\CoreClient.pdb
+C:\Users\User\Desktop\BorealClientServer-master\BorealClientServer-master\CoreClient\bin\Release\netstandard2.0\CoreClient.deps.json
+C:\Users\User\Desktop\BorealClientServer-master\BorealClientServer-master\CoreClient\bin\Release\netstandard2.0\CoreClient.dll
+C:\Users\User\Desktop\BorealClientServer-master\BorealClientServer-master\CoreClient\bin\Release\netstandard2.0\CoreClient.pdb
+C:\Users\User\Desktop\BorealClientServer-master\BorealClientServer-master\CoreClient\bin\Release\netstandard2.0\MessengerService.dll
+C:\Users\User\Desktop\BorealClientServer-master\BorealClientServer-master\CoreClient\bin\Release\netstandard2.0\MessengerService.pdb
+C:\Users\User\Desktop\BorealClientServer-master\BorealClientServer-master\CoreClient\obj\Release\netstandard2.0\CoreClient.csprojAssemblyReference.cache
+C:\Users\User\Desktop\BorealClientServer-master\BorealClientServer-master\CoreClient\obj\Release\netstandard2.0\CoreClient.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\BorealClientServer-master\BorealClientServer-master\CoreClient\obj\Release\netstandard2.0\CoreClient.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\BorealClientServer-master\BorealClientServer-master\CoreClient\obj\Release\netstandard2.0\CoreClient.AssemblyInfo.cs
+C:\Users\User\Desktop\BorealClientServer-master\BorealClientServer-master\CoreClient\obj\Release\netstandard2.0\CoreClient.csproj.CopyComplete
+C:\Users\User\Desktop\BorealClientServer-master\BorealClientServer-master\CoreClient\obj\Release\netstandard2.0\CoreClient.dll
+C:\Users\User\Desktop\BorealClientServer-master\BorealClientServer-master\CoreClient\obj\Release\netstandard2.0\CoreClient.pdb

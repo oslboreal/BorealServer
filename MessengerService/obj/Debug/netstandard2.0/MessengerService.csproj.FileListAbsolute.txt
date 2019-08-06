@@ -16,3 +16,12 @@ C:\Users\mvallejo\Desktop\Client ser repo\BorealClientServer\MessengerService\ob
 C:\Users\mvallejo\Desktop\Client ser repo\BorealClientServer\MessengerService\obj\Debug\netstandard2.0\MessengerService.AssemblyInfo.cs
 C:\Users\mvallejo\Desktop\Client ser repo\BorealClientServer\MessengerService\obj\Debug\netstandard2.0\MessengerService.dll
 C:\Users\mvallejo\Desktop\Client ser repo\BorealClientServer\MessengerService\obj\Debug\netstandard2.0\MessengerService.pdb
+C:\Users\User\Desktop\BorealClientServer-master\BorealClientServer-master\MessengerService\bin\Debug\netstandard2.0\MessengerService.deps.json
+C:\Users\User\Desktop\BorealClientServer-master\BorealClientServer-master\MessengerService\bin\Debug\netstandard2.0\MessengerService.dll
+C:\Users\User\Desktop\BorealClientServer-master\BorealClientServer-master\MessengerService\bin\Debug\netstandard2.0\MessengerService.pdb
+C:\Users\User\Desktop\BorealClientServer-master\BorealClientServer-master\MessengerService\obj\Debug\netstandard2.0\MessengerService.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\BorealClientServer-master\BorealClientServer-master\MessengerService\obj\Debug\netstandard2.0\MessengerService.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\BorealClientServer-master\BorealClientServer-master\MessengerService\obj\Debug\netstandard2.0\MessengerService.AssemblyInfo.cs
+C:\Users\User\Desktop\BorealClientServer-master\BorealClientServer-master\MessengerService\obj\Debug\netstandard2.0\MessengerService.dll
+C:\Users\User\Desktop\BorealClientServer-master\BorealClientServer-master\MessengerService\obj\Debug\netstandard2.0\MessengerService.pdb
+C:\Users\User\Desktop\BorealClientServer-master\BorealClientServer-master\MessengerService\obj\Debug\netstandard2.0\MessengerService.csprojAssemblyReference.cache

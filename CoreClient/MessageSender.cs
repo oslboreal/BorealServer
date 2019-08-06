@@ -8,24 +8,20 @@ namespace CoreClient
 {
     public static class MessageSender
     {
+        // TODO : Resolve this.
+        private const string IP = "127.0.0.1";
+        private const int PORT = 11000;
+
         public static void Test()
         {
             IPHostEntry ipHostInfo = Dns.GetHostEntry(Dns.GetHostName());
             IPAddress ipAddress = ipHostInfo.AddressList[0];
-            IPEndPoint remoteEP = new IPEndPoint(ipAddress, 11000);
+            IPEndPoint remoteEP = new IPEndPoint(ipAddress, PORT);
 
-            TestRequest testRequest = new TestRequest()
-            {
-                Message = "Mensaje prueba",
-                RequestNumber = 1
-            };
-
-            Console.WriteLine(testRequest.Serialize());
-            Send(testRequest.Serialize(), remoteEP);
-            Console.ReadLine();
+            Send("Test", remoteEP);
         }
 
-        public static void Send(string Message, IPEndPoint ipAndPort)
+        public static string Send(string Message, IPEndPoint ipAndPort)
         {
             // Data buffer for incoming data.  
             byte[] bytes = new byte[1024];
@@ -51,33 +47,31 @@ namespace CoreClient
                     // Send the data through the socket.  
                     int bytesSent = sender.Send(msg);
 
-                    // Receive the response from the remote device.  
-                    int bytesRec = sender.Receive(bytes);
-                    Console.WriteLine("Echoed test = {0}",
-                        Encoding.ASCII.GetString(bytes, 0, bytesRec));
-
-                    // Release the socket.  
-                    sender.Shutdown(SocketShutdown.Both);
-                    sender.Close();
-
+                    // Receive and return response.
+                    return MessageReceiver.Receive(sender);
                 }
                 catch (ArgumentNullException ane)
                 {
                     Console.WriteLine("ArgumentNullException : {0}", ane.ToString());
+                    throw;
+                    // TODO : LOGGEAR TODAS ESTAS EXCEPTION.
                 }
                 catch (SocketException se)
                 {
                     Console.WriteLine("SocketException : {0}", se.ToString());
+                    throw;
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine("Unexpected exception : {0}", e.ToString());
+                    throw;
                 }
 
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.ToString());
+                throw;
             }
         }
 

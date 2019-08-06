@@ -1,17 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28922.388
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreServer", "CoreServer\CoreServer.csproj", "{29F58F3A-1890-4A48-8420-FBFB804570EB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreClient", "CoreClient\CoreClient.csproj", "{B7DA995E-7276-4A0A-B49F-A2E6A8654700}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerApp", "ServerApp\ServerApp.csproj", "{5548F8AE-8A0D-41AA-84ED-B15601A13578}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B7DA995E-7276-4A0A-B49F-A2E6A8654700} = {B7DA995E-7276-4A0A-B49F-A2E6A8654700}
+		{8B94B878-FE12-46BE-BACB-7FA8B1B3831B} = {8B94B878-FE12-46BE-BACB-7FA8B1B3831B}
+		{457B22A0-43C5-4DFB-AF23-9EB5FB100E85} = {457B22A0-43C5-4DFB-AF23-9EB5FB100E85}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessengerService", "MessengerService\MessengerService.csproj", "{457B22A0-43C5-4DFB-AF23-9EB5FB100E85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessengerService", "MessengerService\MessengerService.csproj", "{457B22A0-43C5-4DFB-AF23-9EB5FB100E85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientApplication", "ClientApplication\ClientApplication.csproj", "{8B94B878-FE12-46BE-BACB-7FA8B1B3831B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientApplication", "ClientApplication\ClientApplication.csproj", "{8B94B878-FE12-46BE-BACB-7FA8B1B3831B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

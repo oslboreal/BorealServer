@@ -1200,7 +1200,7 @@
   },
   "libraries": {
     "Microsoft.NETCore.App/2.1.0": {
-      "sha512": "JNHhG+j5eIhG26+H721IDmwswGUznTwwSuJMFe/08h0X2YarHvA15sVAvUkA/2Sp3W0ENNm48t+J7KTPRqEpfA==",
+      "sha512": "AvT774nTFgU8cYcGO9j1EMwuayKslxqYTurg32HGpWa2hEYNuW2+XgYVVNcZe6Ndbr84QX6fwaOZfd5n+1m2OA==",
       "type": "package",
       "path": "microsoft.netcore.app/2.1.0",
       "files": [
@@ -1466,7 +1466,7 @@
       ]
     },
     "Microsoft.NETCore.DotNetAppHost/2.1.0": {
-      "sha512": "vMn8V3GOp/SPOG2oE8WxswzAWZ/GZmc8EPiB3vc2EZ6us14ehXhsvUFXndYopGNSjCa9OdqC6L6xStF1KyUZnw==",
+      "sha512": "f/47I60Wg3SrveTvnecCQhCZCAMYlUujWF15EQ/AZTqF/54qeEJjbCIAxKcZI8ToUYzSg6JdfrHggsgjCyCE9Q==",
       "type": "package",
       "path": "microsoft.netcore.dotnetapphost/2.1.0",
       "files": [
@@ -1480,7 +1480,7 @@
       ]
     },
     "Microsoft.NETCore.DotNetHostPolicy/2.1.0": {
-      "sha512": "vBUwNihtLUVS2HhO6WocYfAktRmfFihm6JB8/sJ53caVW+AelvbnYpfiGzaZDpkWjN6vA3xzOKPu9Vu8Zz3p8Q==",
+      "sha512": "p50yZYKzhH64lmArJgoKjtvsNehECa+/sAuOQzZh5uDNBTbRKxjN8IXP1e517xdVsgrFcSNxSEVDKZIOWVjGcQ==",
       "type": "package",
       "path": "microsoft.netcore.dotnethostpolicy/2.1.0",
       "files": [
@@ -1494,7 +1494,7 @@
       ]
     },
     "Microsoft.NETCore.DotNetHostResolver/2.1.0": {
-      "sha512": "o0PRql5qOHFEY3d1WvzE+T7cMFKtOsWLMg8L1oTeGNnI4u5AzOj8o6AdZT3y2GxFA1DAx7AQ9qZjpCO2/bgZRw==",
+      "sha512": "fS9D8a+y55n6mHMbNqgHXaPGkjmpVH9h97OyrBxsCuo3Z8aQaFMJ5xIfmzji2ntUd/3truhMbSgSfIelHOkQpg==",
       "type": "package",
       "path": "microsoft.netcore.dotnethostresolver/2.1.0",
       "files": [
@@ -1508,7 +1508,7 @@
       ]
     },
     "Microsoft.NETCore.Platforms/2.1.0": {
-      "sha512": "ok+RPAtESz/9MUXeIEz6Lv5XAGQsaNmEYXMsgVALj4D7kqC8gveKWXWXbufLySR2fWrwZf8smyN5RmHu0e4BHA==",
+      "sha512": "aSTPL94NloSiQVL5Len8wbjFKOnoAX/vOh3s3DF6g3c7GUUMLCDvnBhmA72M2iN2AedyA8hpr7m89kzSAKUnJQ==",
       "type": "package",
       "path": "microsoft.netcore.platforms/2.1.0",
       "files": [
@@ -1525,7 +1525,7 @@
       ]
     },
     "Microsoft.NETCore.Targets/2.1.0": {
-      "sha512": "x188gIZXOwFXkPXyGavEcPGcR6RGvjFOES2QzskN4gERZjWPN34qhRsZVMC0CLJfQLGSButarcgWxPPM4vmg0w==",
+      "sha512": "etaYwrLZQUS+b3UWTpCnUggd6SQ/ZIkZ5pHnoR7+dIWt/wp2Rv3CvMKOZISsrt7FYCHKwCxfcepuuyEWkQxADg==",
       "type": "package",
       "path": "microsoft.netcore.targets/2.1.0",
       "files": [
@@ -1700,7 +1700,7 @@
       ]
     },
     "runtime.linux-x64.Microsoft.NETCore.App/2.1.0": {
-      "sha512": "gpdW9lwkzEhGNPywIAiHlJEq7rxLSYsohrf3+t2BZCoXxCb5xFrbPujCeHt1b+/Isj/chOgWY3f+68p/AXKq5w==",
+      "sha512": "JBBrkZdkXmiKQ6M8Wwmmh0Y1yZ47HXo0FOIBv1l+3beyfSoiKt1ZIZl2tx94U+L0X1YODkhIQMrpl/ELqabz1Q==",
       "type": "package",
       "path": "runtime.linux-x64.microsoft.netcore.app/2.1.0",
       "hasTools": true,
@@ -2048,7 +2048,7 @@
       ]
     },
     "runtime.linux-x64.Microsoft.NETCore.DotNetAppHost/2.1.0": {
-      "sha512": "Xkj3cZBv908MVNOpJfPTbWoQ60SJX2cAlSiIJkyIotn6cLEVKYldNZ4jJcYLNK5U8TaTAz4HMJHnbhIDzCBaHA==",
+      "sha512": "5kgkeWgyIrMKzO3+ZTqtHDuuGHyga3E9kzArMH/O/CQ47AeF5CGNCgAphXmQW0LTv2UPVc78hujvtRGlrWJegw==",
       "type": "package",
       "path": "runtime.linux-x64.microsoft.netcore.dotnetapphost/2.1.0",
       "files": [
@@ -2063,7 +2063,7 @@
       ]
     },
     "runtime.linux-x64.Microsoft.NETCore.DotNetHostPolicy/2.1.0": {
-      "sha512": "UFD+UlHbLytEmskJZxm00/i3T9AoqIrPPyoDL8Jg3O5MK+azgfEIVz04+C0ZX+pGhyHEOTZkmfgyhaxJsKMz7w==",
+      "sha512": "sLNHFF/Lo1b3uv0ykjawI1wiP8VzopQPUZ4Uoyu48vgHUwDRinmOJZoWs5OAhOXU2CzXnMdr6FwKZ+NMODfsfw==",
       "type": "package",
       "path": "runtime.linux-x64.microsoft.netcore.dotnethostpolicy/2.1.0",
       "files": [
@@ -2078,7 +2078,7 @@
       ]
     },
     "runtime.linux-x64.Microsoft.NETCore.DotNetHostResolver/2.1.0": {
-      "sha512": "odrCZFPsdPACJbh4hL392EFAw+TdH0BCOd9u7p1vvUwsmonwARXtNmmVWfmehelXgWLYnrFDhfr/i/ciut/ekA==",
+      "sha512": "ZFmqT3F/g5tThOc+AL/1aLtuw0prLzn11nVW7q7X4KVMaXrzQLw9aurpRCWsss31y43EMfSgMUJDqf7IpP7yxQ==",
       "type": "package",
       "path": "runtime.linux-x64.microsoft.netcore.dotnethostresolver/2.1.0",
       "files": [
@@ -2093,7 +2093,7 @@
       ]
     },
     "runtime.win-x64.Microsoft.NETCore.App/2.1.0": {
-      "sha512": "XkWuxjNDwCuml/Nj96USA7y7OIady4ZmHvOLIY9VB//1yn0Us9z1Ujee1efvyO1pwOfogj3Gy6GNBSBTG8CsFA==",
+      "sha512": "1NgFJX+Gz/t80NPchuvTBTqbGV4uWOCdI37LLjHZ4K5juQXDG9hQMTDPi5FF1z2ogmb0c8+xSBs3OpGp2Dzjng==",
       "type": "package",
       "path": "runtime.win-x64.microsoft.netcore.app/2.1.0",
       "hasTools": true,
@@ -2320,7 +2320,7 @@
       ]
     },
     "runtime.win-x64.Microsoft.NETCore.DotNetAppHost/2.1.0": {
-      "sha512": "DcMWkXCEhRZr7jLGCLPFnhh003iBqKQJ7gje49OXwuZzBzrzobeQk1hwwinLe2rMARmPMRcckT4UKT0zW4Zc/Q==",
+      "sha512": "s66suy5Hpo6komOx8zmMTkO7XEl78F/jZ0+CA8Bp5zM2yoE2OZR5xAt579+KpN/lG8kbqFvnu7H/4+QQwVYkRg==",
       "type": "package",
       "path": "runtime.win-x64.microsoft.netcore.dotnetapphost/2.1.0",
       "files": [
@@ -2335,7 +2335,7 @@
       ]
     },
     "runtime.win-x64.Microsoft.NETCore.DotNetHostPolicy/2.1.0": {
-      "sha512": "PryFtdS0tJLRPB8uLiHt1AMOKYAxGw5EomGbvvfwMZrdN09VJbMX5RQUY1bD0XZChv2da5RLjeC7d/C2bpEQdA==",
+      "sha512": "KZo9aYStIs69tuEE88X0lHGIq0SMuxVmbczjkcpnF3WxkPJYm+0JX6sU+xx7wX3/bsSmaNxlVsDA7UroVSw8uA==",
       "type": "package",
       "path": "runtime.win-x64.microsoft.netcore.dotnethostpolicy/2.1.0",
       "files": [
@@ -2350,7 +2350,7 @@
       ]
     },
     "runtime.win-x64.Microsoft.NETCore.DotNetHostResolver/2.1.0": {
-      "sha512": "fjyfIhR9nQEjRLzdgJ0Glza91z6jguFe4uUxaCZLv6Jy227a8VkDf+NTNynl0H5o5aGt9JOIRqSAFwULh/OfOw==",
+      "sha512": "6b0MX3mW7UgFt95x1xX6ERBPogLIderDrCHy0+BlrE952LCITnpYPUtQYVmNNBbuzqAvYP9t7kPZ7qyNKyHrUQ==",
       "type": "package",
       "path": "runtime.win-x64.microsoft.netcore.dotnethostresolver/2.1.0",
       "files": [
@@ -2382,40 +2382,38 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mvallejo\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Users\\User\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mvallejo\\Desktop\\Client ser repo\\BorealClientServer\\ClientApplication\\ClientApplication.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\BorealClientServer-master\\BorealClientServer-master\\ClientApplication\\ClientApplication.csproj",
       "projectName": "ClientApplication",
-      "projectPath": "C:\\Users\\mvallejo\\Desktop\\Client ser repo\\BorealClientServer\\ClientApplication\\ClientApplication.csproj",
-      "packagesPath": "C:\\Users\\mvallejo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mvallejo\\Desktop\\Client ser repo\\BorealClientServer\\ClientApplication\\obj\\",
+      "projectPath": "C:\\Users\\User\\Desktop\\BorealClientServer-master\\BorealClientServer-master\\ClientApplication\\ClientApplication.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\BorealClientServer-master\\BorealClientServer-master\\ClientApplication\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\mvallejo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Users\\User\\Desktop\\Librerias NET\\ConfigurationManager\\ConfigurationManager\\bin\\Debug": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\mvallejo\\Desktop\\Client ser repo\\BorealClientServer\\CoreClient\\CoreClient.csproj": {
-              "projectPath": "C:\\Users\\mvallejo\\Desktop\\Client ser repo\\BorealClientServer\\CoreClient\\CoreClient.csproj"
+            "C:\\Users\\User\\Desktop\\BorealClientServer-master\\BorealClientServer-master\\CoreClient\\CoreClient.csproj": {
+              "projectPath": "C:\\Users\\User\\Desktop\\BorealClientServer-master\\BorealClientServer-master\\CoreClient\\CoreClient.csproj"
             }
           }
         }

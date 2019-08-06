@@ -52,12 +52,11 @@
   },
   "libraries": {
     "Microsoft.NETCore.Platforms/1.1.0": {
-      "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
+      "sha512": "L/wsEN199IFLJ11LqU7drks9zHHyqaVZvXorlXOhN58Bv7e1tlyRLrJLTY0h//Lb5cfq6cAwu+RuWbf22oTN5g==",
       "type": "package",
       "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -238,40 +237,38 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mvallejo\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Users\\User\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mvallejo\\Desktop\\Client ser repo\\BorealClientServer\\CoreServer\\CoreServer.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\BorealClientServer-master\\BorealClientServer-master\\CoreServer\\CoreServer.csproj",
       "projectName": "CoreServer",
-      "projectPath": "C:\\Users\\mvallejo\\Desktop\\Client ser repo\\BorealClientServer\\CoreServer\\CoreServer.csproj",
-      "packagesPath": "C:\\Users\\mvallejo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mvallejo\\Desktop\\Client ser repo\\BorealClientServer\\CoreServer\\obj\\",
+      "projectPath": "C:\\Users\\User\\Desktop\\BorealClientServer-master\\BorealClientServer-master\\CoreServer\\CoreServer.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\BorealClientServer-master\\BorealClientServer-master\\CoreServer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\mvallejo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Users\\User\\Desktop\\Librerias NET\\ConfigurationManager\\ConfigurationManager\\bin\\Debug": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Users\\mvallejo\\Desktop\\Client ser repo\\BorealClientServer\\MessengerService\\MessengerService.csproj": {
-              "projectPath": "C:\\Users\\mvallejo\\Desktop\\Client ser repo\\BorealClientServer\\MessengerService\\MessengerService.csproj"
+            "C:\\Users\\User\\Desktop\\BorealClientServer-master\\BorealClientServer-master\\MessengerService\\MessengerService.csproj": {
+              "projectPath": "C:\\Users\\User\\Desktop\\BorealClientServer-master\\BorealClientServer-master\\MessengerService\\MessengerService.csproj"
             }
           }
         }

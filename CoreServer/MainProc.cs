@@ -1,5 +1,6 @@
 ﻿using CoreServer.Helpers;
 using MessengerService.Requests;
+using MessengerService.Responses;
 using System;
 using System.Net;
 using System.Net.Sockets;
@@ -24,13 +25,14 @@ namespace CoreServer
         {
             try
             {
+                ResponseBase response = null;
                 var msg = request.Replace("<EOF>", string.Empty);
 
-                var testRequest = TestRequest.Deserialize(msg);
-                if (testRequest != null)
-                    ProcessTestRequest(testRequest);
+                var requestServerVersion = RequestServerVersion.Deserialize(msg);
+                if (requestServerVersion != null)
+                    response = ProcessTestRequest(requestServerVersion);
 
-                Send(handler, "Received");
+                Send(handler, response.Serialize());
             }
             catch (Exception ex)
             {
@@ -42,16 +44,25 @@ namespace CoreServer
             }
         }
 
-        public static void ProcessTestRequest(TestRequest testRequest)
+        public static ResponseBase ProcessTestRequest(RequestServerVersion requestServerVersion)
         {
+            ResponseServerVersion response = new ResponseServerVersion();
+            response.RequestIdentifier = requestServerVersion.RequestIdentifier;
+
             try
             {
-                var output = $"Number: {testRequest.RequestNumber} - Message: {testRequest.Message}";
-                LoggingService.Log(output, LogType.Succes);
+                response.ResponseStatus = ResponseStatus.Ok;
+                response.Version = "v1.0.0";
+                LoggingService.Log(response.Serialize(), LogType.Succes);
+                return response;
             }
             catch (Exception ex)
             {
+                response.ResponseStatus = ResponseStatus.Error;
+                response.Novelty = "Error processing the request.";
+
                 LoggingService.Log(ex.Message, LogType.Error);
+                return response;
             }
         }
 
