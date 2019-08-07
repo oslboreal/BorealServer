@@ -1,2 +1,2 @@
 # BorealClientServer
-Simple client server library with simple sample applications.
+Simple client server library with a simple sample application.
