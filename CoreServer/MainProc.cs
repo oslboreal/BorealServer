@@ -1,6 +1,4 @@
 ﻿using CoreServer.Components;
-using MessengerService.Requests;
-using MessengerService.Responses;
 using System;
 using System.Net;
 using System.Net.Sockets;

@@ -7,9 +7,8 @@
   "targets": {
     ".NETStandard,Version=v2.0": {},
     ".NETStandard,Version=v2.0/": {
-      "CoreServer/1.0.0": {
+      "CoreServer/1.2.2": {
         "dependencies": {
-          "MessengerService": "1.0.0",
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "12.0.2"
         },
@@ -30,19 +29,11 @@
             "fileVersion": "12.0.2.23222"
           }
         }
-      },
-      "MessengerService/1.0.0": {
-        "dependencies": {
-          "Newtonsoft.Json": "12.0.2"
-        },
-        "runtime": {
-          "MessengerService.dll": {}
-        }
       }
     }
   },
   "libraries": {
-    "CoreServer/1.0.0": {
+    "CoreServer/1.2.2": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -50,7 +41,7 @@
     "Microsoft.NETCore.Platforms/1.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-L/wsEN199IFLJ11LqU7drks9zHHyqaVZvXorlXOhN58Bv7e1tlyRLrJLTY0h//Lb5cfq6cAwu+RuWbf22oTN5g==",
+      "sha512": "sha512-kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
       "path": "microsoft.netcore.platforms/1.1.0",
       "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
     },
@@ -67,11 +58,6 @@
       "sha512": "sha512-rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
       "path": "newtonsoft.json/12.0.2",
       "hashPath": "newtonsoft.json.12.0.2.nupkg.sha512"
-    },
-    "MessengerService/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     }
   }
 }

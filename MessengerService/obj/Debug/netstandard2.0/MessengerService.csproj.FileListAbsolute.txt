@@ -32,3 +32,4 @@ C:\Users\User\Desktop\New folder\BorealClientServer\MessengerService\obj\Debug\n
 C:\Users\User\Desktop\New folder\BorealClientServer\MessengerService\obj\Debug\netstandard2.0\MessengerService.AssemblyInfo.cs
 C:\Users\User\Desktop\New folder\BorealClientServer\MessengerService\obj\Debug\netstandard2.0\MessengerService.dll
 C:\Users\User\Desktop\New folder\BorealClientServer\MessengerService\obj\Debug\netstandard2.0\MessengerService.pdb
+C:\Users\mvallejo\Desktop\Client ser repo\BorealClientServer\MessengerService\obj\Debug\netstandard2.0\MessengerService.csprojAssemblyReference.cache

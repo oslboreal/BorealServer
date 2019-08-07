@@ -8,15 +8,17 @@
     <Description>A simple async and full socket server.</Description>
     <Copyright />
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <RepositoryUrl>https://github.com/oslboreal/BorealServer</RepositoryUrl>
+    <RepositoryUrl></RepositoryUrl>
     <RepositoryType>GIT</RepositoryType>
-    <PackageTags>Server, socket, async</PackageTags>
+    <PackageTags>Server, socket, async.</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.2.2</Version>
+    <AssemblyVersion>1.2.2.0</AssemblyVersion>
+    <FileVersion>1.2.2.0</FileVersion>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageProjectUrl>https://github.com/oslboreal/BorealServer</PackageProjectUrl>
+    <PackageIconUrl>http://marcosvallejo.info/nuget-icon.png</PackageIconUrl>
   </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\MessengerService\MessengerService.csproj" />
-  </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Components\SecurityComponents\Models\" />

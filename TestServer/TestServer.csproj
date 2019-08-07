@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CoreServer, Version=1.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\..\Nuget\Packages\BorealCoreServer.1.2.2\lib\netstandard2.0\CoreServer.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -53,10 +56,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CoreServer\CoreServer.csproj">
-      <Project>{29f58f3a-1890-4a48-8420-fbfb804570eb}</Project>
-      <Name>CoreServer</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MessengerService\MessengerService.csproj">
       <Project>{457B22A0-43C5-4DFB-AF23-9EB5FB100E85}</Project>
       <Name>MessengerService</Name>

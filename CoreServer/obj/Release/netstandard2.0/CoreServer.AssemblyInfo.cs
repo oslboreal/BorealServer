@@ -11,11 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("CoreServer")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Juan Marcos Vallejo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
+[assembly: System.Reflection.AssemblyDescriptionAttribute("A simple async and full socket server.")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("CoreServer")]
+[assembly: System.Reflection.AssemblyProductAttribute("BorealServer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CoreServer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 

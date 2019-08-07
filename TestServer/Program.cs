@@ -2,11 +2,7 @@ using CoreServer.Components;
 using MessengerService.Requests;
 using MessengerService.Responses;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TestServer
 {

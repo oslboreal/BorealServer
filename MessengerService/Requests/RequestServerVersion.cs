@@ -17,8 +17,7 @@ namespace MessengerService.Requests
             }
             catch (System.Exception)
             {
-                throw;
-                //return null;
+                return null;
             }
         }
     }

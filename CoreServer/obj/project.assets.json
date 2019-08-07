@@ -34,29 +34,17 @@
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
-      },
-      "MessengerService/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Newtonsoft.Json": "12.0.2"
-        },
-        "compile": {
-          "bin/placeholder/MessengerService.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/MessengerService.dll": {}
-        }
       }
     }
   },
   "libraries": {
     "Microsoft.NETCore.Platforms/1.1.0": {
-      "sha512": "L/wsEN199IFLJ11LqU7drks9zHHyqaVZvXorlXOhN58Bv7e1tlyRLrJLTY0h//Lb5cfq6cAwu+RuWbf22oTN5g==",
+      "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
       "type": "package",
       "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -222,55 +210,47 @@
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml"
       ]
-    },
-    "MessengerService/1.0.0": {
-      "type": "project",
-      "path": "../MessengerService/MessengerService.csproj",
-      "msbuildProject": "../MessengerService/MessengerService.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "MessengerService >= 1.0.0",
       "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 12.0.2"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {},
+    "C:\\Users\\mvallejo\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "1.0.0",
+    "version": "1.2.2",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\New folder\\BorealClientServer\\CoreServer\\CoreServer.csproj",
+      "projectUniqueName": "C:\\Users\\mvallejo\\Desktop\\Client ser repo\\BorealClientServer\\CoreServer\\CoreServer.csproj",
       "projectName": "BorealCoreServer",
-      "projectPath": "C:\\Users\\User\\Desktop\\New folder\\BorealClientServer\\CoreServer\\CoreServer.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\New folder\\BorealClientServer\\CoreServer\\obj\\",
+      "projectPath": "C:\\Users\\mvallejo\\Desktop\\Client ser repo\\BorealClientServer\\CoreServer\\CoreServer.csproj",
+      "packagesPath": "C:\\Users\\mvallejo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mvallejo\\Desktop\\Client ser repo\\BorealClientServer\\CoreServer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\mvallejo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Users\\User\\Desktop\\Librerias NET\\ConfigurationManager\\ConfigurationManager\\bin\\Debug": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {
-            "C:\\Users\\User\\Desktop\\New folder\\BorealClientServer\\MessengerService\\MessengerService.csproj": {
-              "projectPath": "C:\\Users\\User\\Desktop\\New folder\\BorealClientServer\\MessengerService\\MessengerService.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
