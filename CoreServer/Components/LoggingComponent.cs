@@ -1,6 +1,7 @@
 ﻿using CoreServer.Components.ConfigurationComponents;
 using System;
 using System.IO;
+using System.Threading;
 
 namespace CoreServer.Components
 {
@@ -13,6 +14,8 @@ namespace CoreServer.Components
 
     public static class LoggingComponent
     {
+        private static Mutex mutex = new Mutex();
+
         /// <summary>
         /// Method that register exceptions message and their respective stack trace.
         /// </summary>
@@ -29,17 +32,24 @@ namespace CoreServer.Components
         /// <param name="logType"></param>
         public static void Log(string message, LogType logType)
         {
+            mutex.WaitOne();
             try
             {
+                // TODO : StreamWriter unique instance.
                 // Streamwriter with user statemenet to close the current stream at end.
-                using (StreamWriter streamWriter = new StreamWriter(ConfigurationComponent.LoggingConfiguration.LogFullPath + GetExtensionByLogType(logType)))
+                using (StreamWriter streamWriter = new StreamWriter(ConfigurationComponent.LoggingConfiguration.LogFullPath + GetExtensionByLogType(logType), true))
+                {
                     streamWriter.WriteLine($"[{DateTime.Now}] - {message}");
+                    streamWriter.Flush();
+                }
+
             }
             catch (Exception ex)
             {
-                using (StreamWriter streamWriter = new StreamWriter(ConfigurationComponent.LoggingConfiguration.LogDirectory + "LoggingService.err"))
+                using (StreamWriter streamWriter = new StreamWriter(ConfigurationComponent.LoggingConfiguration.LogDirectory + "LoggingService.err", true))
                     streamWriter.WriteLine($"[{DateTime.Now}] - {ex.Message}");
             }
+            mutex.ReleaseMutex();
         }
 
         /// <summary>

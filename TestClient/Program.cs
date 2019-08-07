@@ -1,7 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace TestClient
@@ -10,13 +7,29 @@ namespace TestClient
     {
         static void Main(string[] args)
         {
-            // The code provided will print ‘Hello World’ to the console.
-            // Press Ctrl+F5 (or go to Debug > Start Without Debugging) to run your app.
-            Console.WriteLine("Hello World!");
-            CoreClient.MessageSender.Test();
-            Console.ReadKey();
+            var dateStart = DateTime.Now;
+            Task[] tasks = new Task[1000];
+            int finishedTasks = 0;
 
-            // Go to http://aka.ms/dotnet-get-started-console to continue learning how to build a console app! 
+            Console.WriteLine("Hello World!");
+            int total = 1000;
+
+            for (int i = 0; i < total; i++)
+            {
+                tasks[i] = Task.Factory.StartNew(() =>
+                {
+                    CoreClient.MessageSender.Test();
+                });
+
+                Task.Factory.ContinueWhenAll(tasks, t =>
+                {
+                    var dateEnd = DateTime.Now;
+                    var timeElapsed = (dateEnd - dateStart).TotalMilliseconds;
+                    Console.WriteLine("[" + DateTime.Now + "] - Time elapsed: " + timeElapsed);
+                });
+
+                Console.ReadKey();
+            }
         }
     }
 }

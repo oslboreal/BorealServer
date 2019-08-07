@@ -47,7 +47,7 @@ namespace CoreServer
             try
             {
                 listener.Bind(iPEndPoint);
-                listener.Listen(100);
+                listener.Listen(1000);
 
                 while (true)
                 {
@@ -150,7 +150,7 @@ namespace CoreServer
 
                 // Complete sending the data to the remote device.  
                 int bytesSent = handler.EndSend(ar);
-                Console.WriteLine("Sent {0} bytes to client.", bytesSent);
+                //Console.WriteLine("Sent {0} bytes to client.", bytesSent);
 
                 handler.Shutdown(SocketShutdown.Both);
                 handler.Close();
