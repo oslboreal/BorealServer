@@ -22,3 +22,15 @@ C:\Users\User\Desktop\BorealClientServer-master\BorealClientServer-master\CoreCl
 C:\Users\User\Desktop\BorealClientServer-master\BorealClientServer-master\CoreClient\obj\Debug\netstandard2.0\CoreClient.csproj.CopyComplete
 C:\Users\User\Desktop\BorealClientServer-master\BorealClientServer-master\CoreClient\obj\Debug\netstandard2.0\CoreClient.dll
 C:\Users\User\Desktop\BorealClientServer-master\BorealClientServer-master\CoreClient\obj\Debug\netstandard2.0\CoreClient.pdb
+C:\Users\User\Desktop\New folder\BorealClientServer\CoreClient\bin\Debug\netstandard2.0\CoreClient.deps.json
+C:\Users\User\Desktop\New folder\BorealClientServer\CoreClient\bin\Debug\netstandard2.0\CoreClient.dll
+C:\Users\User\Desktop\New folder\BorealClientServer\CoreClient\bin\Debug\netstandard2.0\CoreClient.pdb
+C:\Users\User\Desktop\New folder\BorealClientServer\CoreClient\bin\Debug\netstandard2.0\MessengerService.dll
+C:\Users\User\Desktop\New folder\BorealClientServer\CoreClient\bin\Debug\netstandard2.0\MessengerService.pdb
+C:\Users\User\Desktop\New folder\BorealClientServer\CoreClient\obj\Debug\netstandard2.0\CoreClient.csprojAssemblyReference.cache
+C:\Users\User\Desktop\New folder\BorealClientServer\CoreClient\obj\Debug\netstandard2.0\CoreClient.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\New folder\BorealClientServer\CoreClient\obj\Debug\netstandard2.0\CoreClient.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\New folder\BorealClientServer\CoreClient\obj\Debug\netstandard2.0\CoreClient.AssemblyInfo.cs
+C:\Users\User\Desktop\New folder\BorealClientServer\CoreClient\obj\Debug\netstandard2.0\CoreClient.csproj.CopyComplete
+C:\Users\User\Desktop\New folder\BorealClientServer\CoreClient\obj\Debug\netstandard2.0\CoreClient.dll
+C:\Users\User\Desktop\New folder\BorealClientServer\CoreClient\obj\Debug\netstandard2.0\CoreClient.pdb

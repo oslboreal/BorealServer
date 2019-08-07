@@ -19,6 +19,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="C:\Users\mvallejo\Desktop\Client ser repo\BorealClientServer\CoreServer\bin\Debug\netstandard2.0\CoreServer.dll" target="lib\netstandard2.0\CoreServer.dll" />
+    <file src="C:\Users\User\Desktop\New folder\BorealClientServer\CoreServer\bin\Debug\netstandard2.0\CoreServer.dll" target="lib\netstandard2.0\CoreServer.dll" />
   </files>
 </package>

@@ -20,52 +20,9 @@ namespace CoreServer
         // Thread signal.  
         private static ManualResetEvent allDone = new ManualResetEvent(false);
 
-        // TODO : Get this out of here, use delegates to allow custom processes ??.
-        public static void ProcessReceivedRequest(Socket handler, string request)
-        {
-            try
-            {
-                ResponseBase response = null;
-                var msg = request.Replace("<EOF>", string.Empty);
-
-                var requestServerVersion = RequestServerVersion.Deserialize(msg);
-                if (requestServerVersion != null)
-                    response = ProcessTestRequest(requestServerVersion);
-
-                Send(handler, response.Serialize());
-            }
-            catch (Exception ex)
-            {
-                LoggingComponent.Log(ex.Message, LogType.Error);
-            }
-            finally
-            {
-                LoggingComponent.Log($"Request received from: {handler}", LogType.Succes);
-            }
-        }
-
-        public static ResponseBase ProcessTestRequest(RequestServerVersion requestServerVersion)
-        {
-            ResponseServerVersion response = new ResponseServerVersion();
-            response.RequestIdentifier = requestServerVersion.RequestIdentifier;
-
-            try
-            {
-                response.ResponseStatus = ResponseStatus.Ok;
-                response.Version = "v1.0.0";
-                LoggingComponent.Log(response.Serialize(), LogType.Succes);
-                return response;
-            }
-            catch (Exception ex)
-            {
-                response.ResponseStatus = ResponseStatus.Error;
-                response.Novelty = "Error processing the request.";
-
-                LoggingComponent.Log(ex.Message, LogType.Error);
-                return response;
-            }
-        }
-
+        public delegate void ProcessReceivedRequest(Socket handler, string request);
+        public event ProcessReceivedRequest receivedRequestEvent;
+        
         public void Start()
         {
             Task.Factory.StartNew(() =>
@@ -162,7 +119,8 @@ namespace CoreServer
                     //Console.WriteLine("Read {0} bytes from socket. \n Data : {1}",
                     //content.Length, content);
                     // Echo the data back to the client. 
-                    ProcessReceivedRequest(handler, content);
+                    
+                    Instance.receivedRequestEvent.Invoke(handler, content);
                 }
                 else
                 {

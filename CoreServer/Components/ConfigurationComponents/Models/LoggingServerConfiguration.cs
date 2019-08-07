@@ -9,17 +9,31 @@ namespace CoreServer.Components.ConfigurationComponents.Models
     {
         private static Mutex mutex = new Mutex();
 
-        public static string LoggingConfigurationPath { get; set; } = Environment.CurrentDirectory + "\\Configuration\\" + "LoggingConfiguration.json";
+        // # Logging service configuration file properties.
+        public static string LoggingConfigurationDirectory { get; set; } = Environment.CurrentDirectory + "\\Configuration\\";
+        public static string LoggingConfigurationPath { get; set; } = LoggingConfigurationDirectory + "LoggingConfiguration.json";
 
-        // # Logging configuration properties.
-        public string Directory { get; set; } = Environment.CurrentDirectory + ;
-        private string Filename { get; set; }
-        public string Path { get; set; }
+        // # Log creation properties.
+        public string LogDirectory { get; set; } = Environment.CurrentDirectory + "\\Logs\\";
+        private string LogFilename { get; set; }
+        public string LogFullPath { get; set; }
 
+        static LoggingServerConfiguration()
+        {
+            if (!Directory.Exists(LoggingConfigurationDirectory))
+                Directory.CreateDirectory(LoggingConfigurationDirectory);
+        }
+
+        /// <summary>
+        /// Set up the configuration.
+        /// </summary>
         public LoggingServerConfiguration()
         {
-            Filename = DateTime.Now.ToString("d-M-yyyy");
-            Path = Directory + Filename;
+            LogFilename = DateTime.Now.ToString("d-M-yyyy");
+            LogFullPath = LogDirectory + LogFilename;
+
+            if (!Directory.Exists(LogDirectory))
+                Directory.CreateDirectory(LogDirectory);
         }
 
         /// <summary>
@@ -36,6 +50,11 @@ namespace CoreServer.Components.ConfigurationComponents.Models
                 mutex.WaitOne();
 
                 loggingServerConfiguration = new LoggingServerConfiguration();
+
+                // Validate again if the current directory exists.
+                if (!Directory.Exists(Environment.CurrentDirectory + "\\Configuration\\"))
+                    Directory.CreateDirectory(Environment.CurrentDirectory + "\\Configuration\\");
+
                 File.WriteAllText(LoggingConfigurationPath, JsonConvert.SerializeObject(loggingServerConfiguration));
 
                 mutex.ReleaseMutex();

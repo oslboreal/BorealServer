@@ -11,7 +11,15 @@ namespace MessengerService.Requests
 
         public static RequestServerVersion Deserialize(string message)
         {
-            return JsonConvert.DeserializeObject<RequestServerVersion>(message);
+            try
+            {
+                return JsonConvert.DeserializeObject<RequestServerVersion>(message);
+            }
+            catch (System.Exception)
+            {
+                throw;
+                //return null;
+            }
         }
     }
 }
