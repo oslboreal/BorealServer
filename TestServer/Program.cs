@@ -1,6 +1,5 @@
+using CoreServer;
 using CoreServer.Components;
-using MessengerService.Requests;
-using MessengerService.Responses;
 using System;
 using System.Net.Sockets;
 
@@ -10,7 +9,7 @@ namespace TestServer
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Server started!");
+            Console.WriteLine("BorealCoreServer");
             CoreServer.MainProc.Instance.receivedRequestEvent += ProcessReceivedRequest;
             CoreServer.MainProc.Instance.Start();
             Console.ReadKey();
@@ -20,14 +19,16 @@ namespace TestServer
         {
             try
             {
-                ResponseBase response = null;
                 var msg = request.Replace("<EOF>", string.Empty);
 
-                var requestServerVersion = RequestServerVersion.Deserialize(msg);
-                if (requestServerVersion != null)
-                    response = ProcessTestRequest(requestServerVersion);
+                MainProc.Send(handler, "Recibido");
 
-                //Send(handler, response.Serialize());
+                //if (request.Contains("suspender"))
+                    //SuspenderPc().ToString();
+
+                //if (request.Contains("apagar"))
+                    //ApagarPc().ToString();
+
             }
             catch (Exception ex)
             {
@@ -39,25 +40,29 @@ namespace TestServer
             }
         }
 
-        public static ResponseBase ProcessTestRequest(RequestServerVersion requestServerVersion)
+        public static bool ApagarPc()
         {
-            ResponseServerVersion response = new ResponseServerVersion();
-            response.RequestIdentifier = requestServerVersion.RequestIdentifier;
-
             try
             {
-                response.ResponseStatus = ResponseStatus.Ok;
-                response.Version = "v1.0.0";
-                LoggingComponent.Log(response.Serialize(), LogType.Succes);
-                return response;
+                System.Diagnostics.Process.Start("Shutdown", "-s -t 10");
+                return true;
             }
             catch (Exception ex)
             {
-                response.ResponseStatus = ResponseStatus.Error;
-                response.Novelty = "Error processing the request.";
+                return false;
+            }
+        }
 
-                LoggingComponent.Log(ex.Message, LogType.Error);
-                return response;
+        public static bool SuspenderPc()
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(@"C:\WINDOWS\system32\rundll32.exe", "user32.dll, LockWorkStation");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
             }
         }
 

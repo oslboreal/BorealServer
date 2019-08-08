@@ -1,5 +1,4 @@
-﻿using MessengerService.Requests;
-using System;
+﻿using System;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -9,16 +8,10 @@ namespace CoreClient
     public static class MessageSender
     {
         // TODO : Resolve this.
-        private const string IP = "127.0.0.1";
-        private const int PORT = 11000;
 
-        public static void Test()
+        public static string Test(string comando, IPEndPoint ep)
         {
-            IPHostEntry ipHostInfo = Dns.GetHostEntry(Dns.GetHostName());
-            IPAddress ipAddress = ipHostInfo.AddressList[0];
-            IPEndPoint remoteEP = new IPEndPoint(ipAddress, PORT);
-
-            Send("Test", remoteEP);
+            return Send(comando, ep);
         }
 
         public static string Send(string Message, IPEndPoint ipAndPort)

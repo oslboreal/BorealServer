@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System;
 using System.IO;
 using System.Threading;
 
@@ -6,13 +7,15 @@ namespace CoreServer.Components.ConfigurationComponents.Models
 {
     public class NetworkingServerConfiguration
     {
-        private static Mutex mutex = new Mutex();
+        private static ManualResetEvent ResetEvent = new ManualResetEvent(false);
 
         // # Constants.
-        public const string NetworkingServerConfigurationFile = "NetworkingConfiguration.json";
+        public static string LoggingConfigurationDirectory { get; set; } = Environment.CurrentDirectory + "\\Configuration\\";
+        public static string NetworkingServerConfigurationPath { get; set; } = LoggingConfigurationDirectory + "NetworkingConfiguration.json";
 
         // # Properties.
-        public string Path { get; set; }
+        public int Port { get; set; }
+        public string Ip { get; set; }
 
         /// <summary>
         /// Fetch networking configuration state from file.
@@ -23,18 +26,19 @@ namespace CoreServer.Components.ConfigurationComponents.Models
             NetworkingServerConfiguration networkingServerConfiguration = null;
 
             // If it doesnt exist then create it.
-            if (!File.Exists(NetworkingServerConfigurationFile))
+            if (!File.Exists(NetworkingServerConfigurationPath))
             {
-                mutex.WaitOne();
+                ResetEvent.Reset();
 
                 networkingServerConfiguration = new NetworkingServerConfiguration();
-                File.WriteAllText(NetworkingServerConfigurationFile, JsonConvert.SerializeObject(networkingServerConfiguration));
+                File.WriteAllText(NetworkingServerConfigurationPath, JsonConvert.SerializeObject(networkingServerConfiguration));
 
-                mutex.ReleaseMutex();
+                ResetEvent.Set();
+
             }
             else
             {
-                networkingServerConfiguration = JsonConvert.DeserializeObject<NetworkingServerConfiguration>(File.ReadAllText(NetworkingServerConfigurationFile));
+                networkingServerConfiguration = JsonConvert.DeserializeObject<NetworkingServerConfiguration>(File.ReadAllText(NetworkingServerConfigurationPath));
             }
 
             // Configuration file read.

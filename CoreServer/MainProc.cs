@@ -20,24 +20,27 @@ namespace CoreServer
 
         public delegate void ProcessReceivedRequest(Socket handler, string request);
         public event ProcessReceivedRequest receivedRequestEvent;
-        
+
         public void Start()
         {
             Task.Factory.StartNew(() =>
             {
                 LoggingComponent.Log("Process started", LogType.Succes);
 
-                IPHostEntry ipHostInfo = Dns.GetHostEntry(Dns.GetHostName());
-                IPAddress ipAddress = ipHostInfo.AddressList[0];
-                IPEndPoint localEndPoint = new IPEndPoint(ipAddress, 11000);
+                // TODO : Add validation by hostname.
+                //IPHostEntry ipHostInfo = Dns.GetHostEntry(/*Dns.GetHostName()*/);
+                //IPAddress ipAddress = ipHostInfo.AddressList[0];
 
+                // TODO : If the ip is not configured, the server doesnt start and notifies the client.
+                var ip = IPAddress.Parse(Components.ConfigurationComponents.ConfigurationComponent.NetworkingConfiguration.Ip);
+                IPEndPoint localEndPoint = new IPEndPoint(ip, Components.ConfigurationComponents.ConfigurationComponent.NetworkingConfiguration.Port);
                 StartListening(localEndPoint);
             });
         }
 
         private static void StartListening(IPEndPoint iPEndPoint)
         {
-            // Create a TCP/IP socket.  
+            // Create a TCP/IP socket. 
             Socket listener = new Socket(iPEndPoint.AddressFamily,
                 SocketType.Stream, ProtocolType.Tcp);
 
@@ -117,7 +120,7 @@ namespace CoreServer
                     //Console.WriteLine("Read {0} bytes from socket. \n Data : {1}",
                     //content.Length, content);
                     // Echo the data back to the client. 
-                    
+
                     Instance.receivedRequestEvent.Invoke(handler, content);
                 }
                 else
@@ -129,7 +132,7 @@ namespace CoreServer
             }
         }
 
-        private static void Send(Socket handler, String data)
+        public static void Send(Socket handler, String data)
         {
             // Convert the string data to byte data using ASCII encoding.  
             byte[] byteData = Encoding.ASCII.GetBytes(data);

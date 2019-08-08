@@ -219,3 +219,4 @@ C:\Users\mvallejo\Desktop\Client ser repo\BorealClientServer\TestServer\obj\Debu
 C:\Users\mvallejo\Desktop\Client ser repo\BorealClientServer\TestServer\obj\Debug\TestServer.csproj.CopyComplete
 C:\Users\mvallejo\Desktop\Client ser repo\BorealClientServer\TestServer\obj\Debug\TestServer.exe
 C:\Users\mvallejo\Desktop\Client ser repo\BorealClientServer\TestServer\obj\Debug\TestServer.pdb
+C:\Users\mvallejo\Desktop\Client ser repo\BorealClientServer\TestServer\bin\Debug\CoreServer.pdb
