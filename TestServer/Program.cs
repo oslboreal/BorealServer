@@ -9,9 +9,10 @@ namespace TestServer
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("BorealCoreServer");
+            Console.WriteLine("Starting server");
             CoreServer.MainProc.Instance.receivedRequestEvent += ProcessReceivedRequest;
             CoreServer.MainProc.Instance.Start();
+            Console.WriteLine("Started..");
             Console.ReadKey();
         }
 

@@ -25,15 +25,15 @@ namespace CoreServer
         {
             Task.Factory.StartNew(() =>
             {
-                LoggingComponent.Log("Process started", LogType.Succes);
+                IPHostEntry ipHostInfo = Dns.GetHostEntry(Components.ConfigurationComponents.ConfigurationComponent.NetworkingConfiguration.Ip);
+                IPAddress ipAddress = ipHostInfo.AddressList[0];
 
-                // TODO : Add validation by hostname.
-                //IPHostEntry ipHostInfo = Dns.GetHostEntry(/*Dns.GetHostName()*/);
-                //IPAddress ipAddress = ipHostInfo.AddressList[0];
+                if (ipAddress == null)
+                    ipAddress = IPAddress.Parse(Components.ConfigurationComponents.ConfigurationComponent.NetworkingConfiguration.Ip);
 
-                // TODO : If the ip is not configured, the server doesnt start and notifies the client.
-                var ip = IPAddress.Parse(Components.ConfigurationComponents.ConfigurationComponent.NetworkingConfiguration.Ip);
-                IPEndPoint localEndPoint = new IPEndPoint(ip, Components.ConfigurationComponents.ConfigurationComponent.NetworkingConfiguration.Port);
+                IPEndPoint localEndPoint = new IPEndPoint(ipAddress, Components.ConfigurationComponents.ConfigurationComponent.NetworkingConfiguration.Port);
+                LoggingComponent.Log("Server started on " + ipAddress.ToString() + " at port " + localEndPoint.Port, LogType.Succes);
+
                 StartListening(localEndPoint);
             });
         }
@@ -68,7 +68,7 @@ namespace CoreServer
             }
             catch (Exception e)
             {
-                //Console.WriteLine(e.ToString());
+                throw;
             }
         }
 
@@ -151,15 +151,13 @@ namespace CoreServer
 
                 // Complete sending the data to the remote device.  
                 int bytesSent = handler.EndSend(ar);
-                //Console.WriteLine("Sent {0} bytes to client.", bytesSent);
 
                 handler.Shutdown(SocketShutdown.Both);
                 handler.Close();
-
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.ToString());
+                throw;
             }
         }
     }

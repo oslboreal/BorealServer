@@ -30,6 +30,7 @@ namespace CoreClient
                 try
                 {
                     sender.Connect(ipAndPort);
+                    Console.WriteLine("Connected to: " + ipAndPort.ToString());
 
                     Console.WriteLine("Socket connected to {0}",
                         sender.RemoteEndPoint.ToString());

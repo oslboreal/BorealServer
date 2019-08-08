@@ -211,6 +211,7 @@ C:\Users\mvallejo\Desktop\Client ser repo\BorealClientServer\TestServer\bin\Debu
 C:\Users\mvallejo\Desktop\Client ser repo\BorealClientServer\TestServer\bin\Debug\CoreServer.dll
 C:\Users\mvallejo\Desktop\Client ser repo\BorealClientServer\TestServer\bin\Debug\MessengerService.dll
 C:\Users\mvallejo\Desktop\Client ser repo\BorealClientServer\TestServer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\mvallejo\Desktop\Client ser repo\BorealClientServer\TestServer\bin\Debug\CoreServer.pdb
 C:\Users\mvallejo\Desktop\Client ser repo\BorealClientServer\TestServer\bin\Debug\MessengerService.pdb
 C:\Users\mvallejo\Desktop\Client ser repo\BorealClientServer\TestServer\bin\Debug\Newtonsoft.Json.xml
 C:\Users\mvallejo\Desktop\Client ser repo\BorealClientServer\TestServer\obj\Debug\TestServer.csprojAssemblyReference.cache
@@ -219,4 +220,3 @@ C:\Users\mvallejo\Desktop\Client ser repo\BorealClientServer\TestServer\obj\Debu
 C:\Users\mvallejo\Desktop\Client ser repo\BorealClientServer\TestServer\obj\Debug\TestServer.csproj.CopyComplete
 C:\Users\mvallejo\Desktop\Client ser repo\BorealClientServer\TestServer\obj\Debug\TestServer.exe
 C:\Users\mvallejo\Desktop\Client ser repo\BorealClientServer\TestServer\obj\Debug\TestServer.pdb
-C:\Users\mvallejo\Desktop\Client ser repo\BorealClientServer\TestServer\bin\Debug\CoreServer.pdb
