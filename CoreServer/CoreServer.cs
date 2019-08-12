@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -46,9 +45,6 @@ namespace CoreServer
 
         public static void StartListening(IPEndPoint localEndPoint)
         {
-            // Buffer
-            byte[] bytes = new Byte[1024];
-
             // Create a TCP/IP socket.  
             Socket listener = new Socket(localEndPoint.Address.AddressFamily,
                 SocketType.Stream, ProtocolType.Tcp);
@@ -58,63 +54,23 @@ namespace CoreServer
             try
             {
                 listener.Bind(localEndPoint);
-                listener.Listen(100);
+                listener.Listen(100); // TODO : Set listen backlog from configuration file.
 
-                // Start listening for connections.  
+                // Start listening for connections.
                 while (true)
                 {
-                    //Console.WriteLine("Waiting for a connection...");
-                    // Program is suspended while waiting for an incoming connection.  
-
                     ManualResetEvent.Reset();
 
                     SemaphoreSlim.Wait();
                     Socket handler = listener.Accept();
                     SemaphoreSlim.Release();
-
-                    Task.Factory.StartNew(() =>
-                    {
-                        Socket currentHandler = handler;
-
-                        data = null;
-
-                        // An incoming connection needs to be processed.  
-                        while (true)
-                        {
-                            int bytesRec = currentHandler.Receive(bytes);
-
-                            data += Encoding.ASCII.GetString(bytes, 0, bytesRec);
-
-                            if (data.IndexOf("<EOF>") > -1)
-                                break;
-                        }
-
-                        if (string.IsNullOrEmpty(data))
-                        {
-                            Console.WriteLine("Mensaje vacío");
-                            return;
-                        }
-
-                        // Show the data on the console
-                        Console.WriteLine("Text received : {0}", data);
-
-                        if (data == "TEST<EOF>TEST<EOF>")
-                            Console.WriteLine("Mensaje duplicado");
-
-                        // Echo the data back to the client.  
-                        byte[] msg = Encoding.ASCII.GetBytes(data);
-
-                        currentHandler.Send(msg);
-                        currentHandler.Shutdown(SocketShutdown.Both);
-                        currentHandler.Close();
-                        ManualResetEvent.Set();
-                    });
-
+                    ProcessRequest(handler);
                     ManualResetEvent.WaitOne();
                 }
             }
             catch (Exception e)
             {
+                // TODO : Log exception, problem listening.
                 Console.WriteLine(e.ToString());
             }
 
@@ -122,6 +78,51 @@ namespace CoreServer
             Console.Read();
         }
 
+        private static void ProcessRequest(Socket handler)
+        {
+            Task.Factory.StartNew(() =>
+            {
+                try
+                {
+                    // Buffer
+                    byte[] bytes = new Byte[1024];
+
+                    Socket currentHandler = handler;
+                    data = null;
+
+                    // Fetch content..  
+                    while (true)
+                    {
+                        int bytesRec = currentHandler.Receive(bytes);
+
+                        data += Encoding.ASCII.GetString(bytes, 0, bytesRec);
+
+                        if (data.IndexOf("<EOF>") > -1)
+                            break;
+                    }
+
+                    if (string.IsNullOrEmpty(data))
+                        throw new ApplicationException("Received data is empty.");
+
+                    // Show the data on the console
+                    Console.WriteLine("Content received : {0}", data);
+
+
+                    // Echo the data back to the client.  
+                    byte[] msg = Encoding.ASCII.GetBytes(data);
+
+                    currentHandler.Send(msg);
+                    currentHandler.Shutdown(SocketShutdown.Both);
+                    currentHandler.Close();
+                    ManualResetEvent.Set();
+                }
+                catch (Exception)
+                {
+                    // TODO : Log exception, problem processing request.?
+                    throw;
+                }
+            });
+        }
     }
 }
 

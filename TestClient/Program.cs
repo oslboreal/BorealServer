@@ -15,7 +15,7 @@ namespace TestClient
             IPAddress ipAddress = ipHostInfo.AddressList[0];
             IPEndPoint localEndPoint = new IPEndPoint(ipAddress, 11000);
 
-            for (int i = 0; i < 3000; i++)
+            for (int i = 0; i < 5000; i++)
             {
                 Console.WriteLine(CoreClient.MessageSender.Test($"{i}<EOF>", localEndPoint));
             }
