@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace CoreServer
@@ -19,6 +20,9 @@ namespace CoreServer
 
         public delegate void ProcessReceivedRequest(Socket handler, string request);
         public event ProcessReceivedRequest receivedRequestEvent;
+
+        static ManualResetEvent ManualResetEvent { get; set; } = new ManualResetEvent(false);
+        static SemaphoreSlim SemaphoreSlim { get; set; } = new SemaphoreSlim(10);
 
         public void Start()
         {
@@ -54,36 +58,59 @@ namespace CoreServer
             try
             {
                 listener.Bind(localEndPoint);
-                listener.Listen(10);
+                listener.Listen(100);
 
                 // Start listening for connections.  
                 while (true)
                 {
                     //Console.WriteLine("Waiting for a connection...");
                     // Program is suspended while waiting for an incoming connection.  
+
+                    ManualResetEvent.Reset();
+
+                    SemaphoreSlim.Wait();
                     Socket handler = listener.Accept();
-                    data = null;
+                    SemaphoreSlim.Release();
 
-                    // An incoming connection needs to be processed.  
-                    while (true)
+                    Task.Factory.StartNew(() =>
                     {
-                        int bytesRec = handler.Receive(bytes);
-                        data += Encoding.ASCII.GetString(bytes, 0, bytesRec);
-                        if (data.IndexOf("<EOF>") > -1)
+                        Socket currentHandler = handler;
+
+                        data = null;
+
+                        // An incoming connection needs to be processed.  
+                        while (true)
                         {
-                            break;
+                            int bytesRec = currentHandler.Receive(bytes);
+
+                            data += Encoding.ASCII.GetString(bytes, 0, bytesRec);
+
+                            if (data.IndexOf("<EOF>") > -1)
+                                break;
                         }
-                    }
 
-                    // Show the data on the console.  
-                    Console.WriteLine("Text received : {0}", data);
+                        if (string.IsNullOrEmpty(data))
+                        {
+                            Console.WriteLine("Mensaje vacío");
+                            return;
+                        }
 
-                    // Echo the data back to the client.  
-                    byte[] msg = Encoding.ASCII.GetBytes(data);
+                        // Show the data on the console
+                        Console.WriteLine("Text received : {0}", data);
 
-                    handler.Send(msg);
-                    handler.Shutdown(SocketShutdown.Both);
-                    handler.Close();
+                        if (data == "TEST<EOF>TEST<EOF>")
+                            Console.WriteLine("Mensaje duplicado");
+
+                        // Echo the data back to the client.  
+                        byte[] msg = Encoding.ASCII.GetBytes(data);
+
+                        currentHandler.Send(msg);
+                        currentHandler.Shutdown(SocketShutdown.Both);
+                        currentHandler.Close();
+                        ManualResetEvent.Set();
+                    });
+
+                    ManualResetEvent.WaitOne();
                 }
             }
             catch (Exception e)

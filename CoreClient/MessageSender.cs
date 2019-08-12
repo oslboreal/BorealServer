@@ -36,7 +36,7 @@ namespace CoreClient
                         sender.RemoteEndPoint.ToString());
 
                     // Encode the data string into a byte array.  
-                    byte[] msg = Encoding.ASCII.GetBytes($"{Message}<EOF>");
+                    byte[] msg = Encoding.ASCII.GetBytes($"{Message}");
 
                     // Send the data through the socket.  
                     int bytesSent = sender.Send(msg);

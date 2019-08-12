@@ -10,8 +10,9 @@ namespace TestServer
         static void Main(string[] args)
         {
             Console.WriteLine("Starting server");
-            CoreServer.MainProc.Instance.receivedRequestEvent += ProcessReceivedRequest;
-            CoreServer.MainProc.Instance.Start();
+            CoreServer.CoreServer.Instance.receivedRequestEvent += ProcessReceivedRequest;
+            CoreServer.CoreServer.Instance.Start();
+            //CoreServer.MainProc.Instance.Start();
             Console.WriteLine("Started..");
             Console.ReadKey();
         }

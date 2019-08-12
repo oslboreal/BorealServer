@@ -10,13 +10,15 @@ namespace TestClient
         {
             var dateStart = DateTime.Now;
             Task[] tasks = new Task[1000];
-            int finishedTasks = 0;
 
-            IPHostEntry ipHostInfo = Dns.GetHostEntry("IT-SILVINA");
+            IPHostEntry ipHostInfo = Dns.GetHostEntry("IT-MARCOS");
             IPAddress ipAddress = ipHostInfo.AddressList[0];
             IPEndPoint localEndPoint = new IPEndPoint(ipAddress, 11000);
-           
-            Console.WriteLine(CoreClient.MessageSender.Test("TEST<EOF>", localEndPoint));
+
+            for (int i = 0; i < 3000; i++)
+            {
+                Console.WriteLine(CoreClient.MessageSender.Test($"{i}<EOF>", localEndPoint));
+            }
 
             Console.WriteLine("Comando enviado correctamente");
             Console.ReadKey();
