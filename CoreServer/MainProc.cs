@@ -25,13 +25,13 @@ namespace CoreServer
         {
             Task.Factory.StartNew(() =>
             {
-                IPHostEntry ipHostInfo = Dns.GetHostEntry(Components.ConfigurationComponents.ConfigurationComponent.NetworkingConfiguration.Ip);
+                IPHostEntry ipHostInfo = Dns.GetHostEntry(Components.ConfigurationComponents.Configuration.NetworkingConfiguration.Ip);
                 IPAddress ipAddress = ipHostInfo.AddressList[0];
 
                 if (ipAddress == null)
-                    ipAddress = IPAddress.Parse(Components.ConfigurationComponents.ConfigurationComponent.NetworkingConfiguration.Ip);
+                    ipAddress = IPAddress.Parse(Components.ConfigurationComponents.Configuration.NetworkingConfiguration.Ip);
 
-                IPEndPoint localEndPoint = new IPEndPoint(ipAddress, Components.ConfigurationComponents.ConfigurationComponent.NetworkingConfiguration.Port);
+                IPEndPoint localEndPoint = new IPEndPoint(ipAddress, Components.ConfigurationComponents.Configuration.NetworkingConfiguration.Port);
                 LoggingComponent.Log("Server started on " + ipAddress.ToString() + " at port " + localEndPoint.Port, LogType.Succes);
 
                 StartListening(localEndPoint);

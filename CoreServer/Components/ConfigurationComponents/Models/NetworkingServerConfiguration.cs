@@ -3,7 +3,7 @@ using System;
 using System.IO;
 using System.Threading;
 
-namespace CoreServer.Components.ConfigurationComponents.Models
+namespace CoreServer.Components.ConfigurationComponents
 {
     public class NetworkingServerConfiguration
     {
@@ -16,6 +16,7 @@ namespace CoreServer.Components.ConfigurationComponents.Models
         // # Properties.
         public int Port { get; set; }
         public string Ip { get; set; }
+        public int ListeningSockets { get; set; }
 
         /// <summary>
         /// Fetch networking configuration state from file.
@@ -31,17 +32,22 @@ namespace CoreServer.Components.ConfigurationComponents.Models
                 ResetEvent.Reset();
 
                 networkingServerConfiguration = new NetworkingServerConfiguration();
-                File.WriteAllText(NetworkingServerConfigurationPath, JsonConvert.SerializeObject(networkingServerConfiguration));
+
+                // Default values. 
+                networkingServerConfiguration.Ip = "127.0.0.1";
+                networkingServerConfiguration.ListeningSockets = 100;
+                networkingServerConfiguration.Port = 11000;
+
+                using (StreamWriter writer = new StreamWriter(NetworkingServerConfigurationPath))
+                    writer.Write(JsonConvert.SerializeObject(networkingServerConfiguration));
 
                 ResetEvent.Set();
-
             }
             else
             {
-                networkingServerConfiguration = JsonConvert.DeserializeObject<NetworkingServerConfiguration>(File.ReadAllText(NetworkingServerConfigurationPath));
+                using (StreamReader r = new StreamReader(NetworkingServerConfigurationPath))
+                    networkingServerConfiguration = JsonConvert.DeserializeObject<NetworkingServerConfiguration>(r.ReadToEnd());
             }
-
-            // Configuration file read.
             return networkingServerConfiguration;
         }
     }

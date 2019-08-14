@@ -3,7 +3,7 @@ using System;
 using System.IO;
 using System.Threading;
 
-namespace CoreServer.Components.ConfigurationComponents.Models
+namespace CoreServer.Components.ConfigurationComponents
 {
     public class UserInterfaceServerConfiguration
     {

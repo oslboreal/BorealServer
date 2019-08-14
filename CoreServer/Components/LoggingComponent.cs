@@ -20,7 +20,7 @@ namespace CoreServer.Components
         /// Method that register exceptions message and their respective stack trace.
         /// </summary>
         /// <param name="ex"></param>
-        public static void Log(Exception ex)
+        public static void LogException(Exception ex)
         {
             Log($"Message: {ex.Message}\n{ex.StackTrace}", LogType.Error);
         }
@@ -32,12 +32,14 @@ namespace CoreServer.Components
         /// <param name="logType"></param>
         public static void Log(string message, LogType logType)
         {
+            // Sync: block threads and wait for signal.
             mutex.WaitOne();
+
             try
             {
                 // TODO : StreamWriter unique instance.
                 // Streamwriter with user statemenet to close the current stream at end.
-                using (StreamWriter streamWriter = new StreamWriter(ConfigurationComponent.LoggingConfiguration.LogFullPath + GetExtensionByLogType(logType), true))
+                using (StreamWriter streamWriter = new StreamWriter(Configuration.LoggingConfiguration.LogFullPath + GetExtensionByLogType(logType), true))
                 {
                     streamWriter.WriteLine($"[{DateTime.Now}] - {message}");
                     streamWriter.Flush();
@@ -46,9 +48,11 @@ namespace CoreServer.Components
             }
             catch (Exception ex)
             {
-                using (StreamWriter streamWriter = new StreamWriter(ConfigurationComponent.LoggingConfiguration.LogDirectory + "LoggingService.err", true))
+                using (StreamWriter streamWriter = new StreamWriter(Configuration.LoggingConfiguration.LogDirectory + "LoggingService.err", true))
                     streamWriter.WriteLine($"[{DateTime.Now}] - {ex.Message}");
             }
+
+            // Sync: allows new thread.
             mutex.ReleaseMutex();
         }
 

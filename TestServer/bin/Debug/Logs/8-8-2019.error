@@ -1,0 +1,4 @@
+[14/8/2019 14:37:19] - Message: Se ha forzado la interrupción de una conexión existente por el host remoto
+   en System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   en System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   en CoreServer.Server.<>c__DisplayClass17_0.<ProcessRequest>b__0()

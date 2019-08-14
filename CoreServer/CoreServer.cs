@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CoreServer.Components;
+using CoreServer.Components.ConfigurationComponents;
+using System;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -10,38 +12,35 @@ namespace CoreServer
     /// <summary>
     /// Multithreading server.
     /// </summary>
-    public class CoreServer
+    public class Server
     {
         #region Singleton
-        private static CoreServer proc;
-        public static CoreServer Instance { get { if (proc == null) proc = new CoreServer(); return proc; } }
+        private static Server proc;
+        public static Server Instance { get { if (proc == null) proc = new Server(); return proc; } }
         #endregion
 
         public delegate void ProcessReceivedRequest(Socket handler, string request);
-        public event ProcessReceivedRequest receivedRequestEvent;
+        public static event ProcessReceivedRequest receivedRequestEvent;
 
         static ManualResetEvent ManualResetEvent { get; set; } = new ManualResetEvent(false);
-        static SemaphoreSlim SemaphoreSlim { get; set; } = new SemaphoreSlim(10);
+        static SemaphoreSlim SemaphoreSlim { get; set; } = new SemaphoreSlim(Configuration.NetworkingConfiguration.ListeningSockets);
 
         public void Start()
         {
             Task.Factory.StartNew(() =>
             {
-                IPHostEntry ipHostInfo = Dns.GetHostEntry(Components.ConfigurationComponents.ConfigurationComponent.NetworkingConfiguration.Ip);
+                IPHostEntry ipHostInfo = Dns.GetHostEntry(Configuration.NetworkingConfiguration.Ip);
                 IPAddress ipAddress = ipHostInfo.AddressList[0];
 
                 if (ipAddress == null)
-                    ipAddress = IPAddress.Parse(Components.ConfigurationComponents.ConfigurationComponent.NetworkingConfiguration.Ip);
+                    ipAddress = IPAddress.Parse(Configuration.NetworkingConfiguration.Ip);
 
-                IPEndPoint localEndPoint = new IPEndPoint(ipAddress, Components.ConfigurationComponents.ConfigurationComponent.NetworkingConfiguration.Port);
-                //LoggingComponent.Log("Server started on " + ipAddress.ToString() + " at port " + localEndPoint.Port, LogType.Succes);
+                IPEndPoint localEndPoint = new IPEndPoint(ipAddress, Components.ConfigurationComponents.Configuration.NetworkingConfiguration.Port);
+                LoggingComponent.Log($"Server started on {localEndPoint}.", LogType.Succes);
 
                 StartListening(localEndPoint);
             });
         }
-
-        // Incoming data from the client.  
-        public static string data = null;
 
         public static void StartListening(IPEndPoint localEndPoint)
         {
@@ -54,13 +53,12 @@ namespace CoreServer
             try
             {
                 listener.Bind(localEndPoint);
-                listener.Listen(100); // TODO : Set listen backlog from configuration file.
+                listener.Listen(Configuration.NetworkingConfiguration.ListeningSockets);
 
                 // Start listening for connections.
                 while (true)
                 {
                     ManualResetEvent.Reset();
-
                     SemaphoreSlim.Wait();
                     Socket handler = listener.Accept();
                     SemaphoreSlim.Release();
@@ -70,12 +68,9 @@ namespace CoreServer
             }
             catch (Exception e)
             {
-                // TODO : Log exception, problem listening.
+                LoggingComponent.LogException(e);
                 Console.WriteLine(e.ToString());
             }
-
-            Console.WriteLine("\nPress ENTER to continue...");
-            Console.Read();
         }
 
         private static void ProcessRequest(Socket handler)
@@ -84,17 +79,15 @@ namespace CoreServer
             {
                 try
                 {
-                    // Buffer
+                    // Not shared variables.
+                    string data = null;
                     byte[] bytes = new Byte[1024];
-
                     Socket currentHandler = handler;
-                    data = null;
 
                     // Fetch content..  
                     while (true)
                     {
                         int bytesRec = currentHandler.Receive(bytes);
-
                         data += Encoding.ASCII.GetString(bytes, 0, bytesRec);
 
                         if (data.IndexOf("<EOF>") > -1)
@@ -104,24 +97,55 @@ namespace CoreServer
                     if (string.IsNullOrEmpty(data))
                         throw new ApplicationException("Received data is empty.");
 
-                    // Show the data on the console
-                    Console.WriteLine("Content received : {0}", data);
+                    // Removes EOF.
+                    data = data.Replace("<EOF>", string.Empty);
 
+                    // If the server does'nt have receivedRequestEvent handler, close the communication.
+                    if (receivedRequestEvent != null)
+                        receivedRequestEvent(handler, data);
+                    else
+                        Close(handler);
 
-                    // Echo the data back to the client.  
-                    byte[] msg = Encoding.ASCII.GetBytes(data);
-
-                    currentHandler.Send(msg);
-                    currentHandler.Shutdown(SocketShutdown.Both);
-                    currentHandler.Close();
                     ManualResetEvent.Set();
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    // TODO : Log exception, problem processing request.?
-                    throw;
+                    LoggingComponent.LogException(ex);
                 }
             });
+        }
+
+        /// <summary>
+        /// Sends a message to client.
+        /// </summary>
+        /// <param name="handler"></param>
+        /// <param name="data"></param>
+        public static void Send(Socket handler, String data)
+        {
+            // Echo the data back to the client.  
+            byte[] msg = Encoding.ASCII.GetBytes(data);
+            handler.Send(msg);
+        }
+
+        /// <summary>
+        /// Closes the socket and the current communication.
+        /// </summary>
+        /// <param name="handler"></param>
+        public static void Close(Socket handler)
+        {
+            handler.Shutdown(SocketShutdown.Both);
+            handler.Close();
+        }
+
+        /// <summary>
+        /// Sends a response to the client and close the communication.
+        /// </summary>
+        /// <param name="handler"></param>
+        /// <param name="data"></param>
+        public static void SendAndClose(Socket handler, String data)
+        {
+            Send(handler, data);
+            Close(handler);
         }
     }
 }

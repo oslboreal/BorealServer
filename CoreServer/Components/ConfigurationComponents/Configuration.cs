@@ -1,8 +1,6 @@
-﻿using CoreServer.Components.ConfigurationComponents.Models;
-
-namespace CoreServer.Components.ConfigurationComponents
+﻿namespace CoreServer.Components.ConfigurationComponents
 {
-    public static class ConfigurationComponent
+    public static class Configuration
     {
         public static LoggingServerConfiguration LoggingConfiguration
         {

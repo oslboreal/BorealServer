@@ -1,6 +1,6 @@
-using CoreServer;
 using CoreServer.Components;
 using System;
+using System.Net;
 using System.Net.Sockets;
 
 namespace TestServer
@@ -10,27 +10,32 @@ namespace TestServer
         static void Main(string[] args)
         {
             Console.WriteLine("Starting server");
-            CoreServer.CoreServer.Instance.receivedRequestEvent += ProcessReceivedRequest;
-            CoreServer.CoreServer.Instance.Start();
-            //CoreServer.MainProc.Instance.Start();
-            Console.WriteLine("Started..");
+
+            // Received request handler.
+            CoreServer.Server.receivedRequestEvent += ProcessReceivedRequest;
+
+            CoreServer.Server.Instance.Start();
+
+            Console.WriteLine("Server started..");
             Console.ReadKey();
         }
 
+        /// <summary>
+        /// Handles the event that is invoked when a request is received by the server.
+        /// </summary>
+        /// <param name="handler"></param>
+        /// <param name="request"></param>
         public static void ProcessReceivedRequest(Socket handler, string request)
         {
             try
             {
-                var msg = request.Replace("<EOF>", string.Empty);
-
-                MainProc.Send(handler, "Recibido");
+                MycustomAction(handler, request);
 
                 //if (request.Contains("suspender"))
-                    //SuspenderPc().ToString();
+                //SuspenderPc().ToString();
 
                 //if (request.Contains("apagar"))
-                    //ApagarPc().ToString();
-
+                //ApagarPc().ToString();
             }
             catch (Exception ex)
             {
@@ -39,14 +44,19 @@ namespace TestServer
             finally
             {
                 LoggingComponent.Log($"Request received from: {handler}", LogType.Succes);
+
+                if (handler.Connected)
+                    handler.Close();
             }
         }
 
-        public static bool ApagarPc()
+        public static bool MycustomAction(Socket handler, string receivedMessage)
         {
             try
             {
-                System.Diagnostics.Process.Start("Shutdown", "-s -t 10");
+                IPEndPoint remoteIpEndPoint = handler.RemoteEndPoint as IPEndPoint;
+                Console.WriteLine($"[{DateTime.Now} from {remoteIpEndPoint}]" + receivedMessage);
+                CoreServer.Server.Send(handler, "Recibido");
                 return true;
             }
             catch (Exception ex)

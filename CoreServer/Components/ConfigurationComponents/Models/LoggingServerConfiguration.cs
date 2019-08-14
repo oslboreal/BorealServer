@@ -3,7 +3,7 @@ using System;
 using System.IO;
 using System.Threading;
 
-namespace CoreServer.Components.ConfigurationComponents.Models
+namespace CoreServer.Components.ConfigurationComponents
 {
     public class LoggingServerConfiguration
     {
@@ -15,7 +15,7 @@ namespace CoreServer.Components.ConfigurationComponents.Models
 
         // # Log creation properties.
         public string LogDirectory { get; set; } = Environment.CurrentDirectory + "\\Logs\\";
-        private string LogFilename { get; set; }
+        public string LogFilename { get; set; }
         public string LogFullPath { get; set; }
 
         static LoggingServerConfiguration()
