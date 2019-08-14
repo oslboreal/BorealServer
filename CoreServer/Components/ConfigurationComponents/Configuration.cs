@@ -17,13 +17,5 @@
                 return NetworkingServerConfiguration.RefreshSection();
             }
         }
-
-        public static UserInterfaceServerConfiguration UserInterfaceConfiguration
-        {
-            get
-            {
-                return UserInterfaceServerConfiguration.RefreshSection();
-            }
-        }
     }
 }

@@ -18,6 +18,12 @@ namespace CoreServer.Components.ConfigurationComponents
         public string Ip { get; set; }
         public int ListeningSockets { get; set; }
 
+        public NetworkingServerConfiguration()
+        {
+            if (!Directory.Exists(LoggingConfigurationDirectory))
+                Directory.CreateDirectory(LoggingConfigurationDirectory);
+        }
+
         /// <summary>
         /// Fetch networking configuration state from file.
         /// </summary>

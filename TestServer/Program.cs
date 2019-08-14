@@ -50,6 +50,12 @@ namespace TestServer
             }
         }
 
+        /// <summary>
+        /// Processing action example.
+        /// </summary>
+        /// <param name="handler"></param>
+        /// <param name="receivedMessage"></param>
+        /// <returns></returns>
         public static bool MycustomAction(Socket handler, string receivedMessage)
         {
             try
@@ -59,20 +65,7 @@ namespace TestServer
                 CoreServer.Server.Send(handler, "Recibido");
                 return true;
             }
-            catch (Exception ex)
-            {
-                return false;
-            }
-        }
-
-        public static bool SuspenderPc()
-        {
-            try
-            {
-                System.Diagnostics.Process.Start(@"C:\WINDOWS\system32\rundll32.exe", "user32.dll, LockWorkStation");
-                return true;
-            }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

@@ -19,9 +19,11 @@ namespace CoreServer
         public static Server Instance { get { if (proc == null) proc = new Server(); return proc; } }
         #endregion
 
+        // # Events
         public delegate void ProcessReceivedRequest(Socket handler, string request);
         public static event ProcessReceivedRequest receivedRequestEvent;
 
+        // # Sync
         static ManualResetEvent ManualResetEvent { get; set; } = new ManualResetEvent(false);
         static SemaphoreSlim SemaphoreSlim { get; set; } = new SemaphoreSlim(Configuration.NetworkingConfiguration.ListeningSockets);
 
@@ -35,7 +37,7 @@ namespace CoreServer
                 if (ipAddress == null)
                     ipAddress = IPAddress.Parse(Configuration.NetworkingConfiguration.Ip);
 
-                IPEndPoint localEndPoint = new IPEndPoint(ipAddress, Components.ConfigurationComponents.Configuration.NetworkingConfiguration.Port);
+                IPEndPoint localEndPoint = new IPEndPoint(ipAddress, Configuration.NetworkingConfiguration.Port);
                 LoggingComponent.Log($"Server started on {localEndPoint}.", LogType.Succes);
 
                 StartListening(localEndPoint);

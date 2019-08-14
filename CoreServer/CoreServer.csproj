@@ -5,16 +5,16 @@
     <PackageId>BorealCoreServer</PackageId>
     <Authors>Juan Marcos Vallejo</Authors>
     <Product>BorealServer</Product>
-    <Description>A simple async and full socket server.</Description>
+    <Description>BorealCoreServer is a simple, asynchronous, multithreading and socket based server library.</Description>
     <Copyright />
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryUrl></RepositoryUrl>
     <RepositoryType>GIT</RepositoryType>
     <PackageTags>Server, socket, async.</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.2.2</Version>
-    <AssemblyVersion>1.2.2.0</AssemblyVersion>
-    <FileVersion>1.2.2.0</FileVersion>
+    <Version>1.2.4</Version>
+    <AssemblyVersion>1.2.4.0</AssemblyVersion>
+    <FileVersion>1.2.4.0</FileVersion>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageProjectUrl>https://github.com/oslboreal/BorealServer</PackageProjectUrl>
     <PackageIconUrl>http://marcosvallejo.info/nuget-icon.png</PackageIconUrl>
