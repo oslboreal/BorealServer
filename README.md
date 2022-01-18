@@ -40,18 +40,4 @@ You may process a request using an event handler like ProcessReceivedRequest. Bo
 
 BorealCoreServer will create a Configuration folder in your Environment.CurrentDirectory
 This folder will contain some json files and you will be able to set your own custom configuration (ip, port, logging paths, etc.)
-
-## Components
-
-The library is "Component oriented", guaranteeing code modularity and avoiding dependency between these.
-
-```mermaid
-graph LR
-A[Core Server] -- Uses --> B(Configuration Component)
-A -- Uses --> C(LoggingComponent)
-A -- Uses --> D(InternetProtocolSecurityComponent)
-B -- Uses --> E(Networking Configuration Component)
-B -- Uses --> F(Logging Configuration Component)
-D -- Uses --> B
-C -- Uses --> B
 ```
