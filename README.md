@@ -20,11 +20,8 @@ You may process a request using an event handler like ProcessReceivedRequest. Bo
             {
                 MycustomAction(handler, request);
 
-                //if (request.Contains("suspender"))
-                //SuspenderPc().ToString();
-
-                //if (request.Contains("apagar"))
-                //ApagarPc().ToString();
+                if (request.Contains("message"))
+                 DoSomething();
             }
             catch (Exception ex)
             {
@@ -41,8 +38,8 @@ You may process a request using an event handler like ProcessReceivedRequest. Bo
 
 ## Configuration
 
-BorealCoreServer will create a Configuration folder in your Environment.CurrentDirectory (your application root path)
-This folder contains a few json files where you could set your own custom configuration like ip, port, logging paths, etc.
+BorealCoreServer will create a Configuration folder in your Environment.CurrentDirectory
+This folder will contain some json files and you will be able to set your own custom configuration (ip, port, logging paths, etc.)
 
 ## Components
 
